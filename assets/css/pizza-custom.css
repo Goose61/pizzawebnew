@@ -714,6 +714,7 @@
   z-index: 4;
 }
 
+/* Responsive pepperoni positioning */
 .pepperoni {
   position: absolute;
   width: 35px;
@@ -724,13 +725,31 @@
   z-index: 4;
 }
 
-/* Ensure pepperoni stay within sauce layer boundaries */
+/* Ensure pepperoni stay within sauce layer boundaries and scale properly */
 #toppings .pepperoni {
-  /* Sauce layer is 260px wide, positioned at 20px from left */
-  /* So pepperoni should be between 40px and 260px from left edge */
-  /* And between 40px and 260px from top edge */
   max-width: 35px;
   max-height: 35px;
+  width: 35px;
+  height: 35px;
+}
+
+/* Responsive pepperoni scaling for different screen sizes */
+@media (max-width: 768px) {
+  #toppings .pepperoni {
+    width: 30px;
+    height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  #toppings .pepperoni {
+    width: 25px;
+    height: 25px;
+    max-width: 25px;
+    max-height: 25px;
+  }
 }
 
 /* Layer info styles - positioned in corners around pizza */
@@ -1026,4 +1045,224 @@
     right: auto;
     bottom: auto;
   }
+} 
+
+/* Desktop-only shapes */
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* Shape positioning for different sections */
+.hero .shape {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.hero .shape-1 {
+  top: 10%;
+  left: 5%;
+  width: 150px;
+  height: 150px;
+}
+
+.hero .shape-2 {
+  bottom: 15%;
+  right: 5%;
+  width: 120px;
+  height: 120px;
+}
+
+.marketing-section .shape {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.marketing-section .shape-1 {
+  top: 10%;
+  right: 5%;
+  width: 150px;
+  height: 150px;
+}
+
+.marketing-section .shape-2 {
+  bottom: 15%;
+  left: 5%;
+  width: 120px;
+  height: 120px;
+}
+
+.marketing-section .shape-3 {
+  top: 50%;
+  right: 15%;
+  width: 100px;
+  height: 100px;
+}
+
+.pizza-builder-section .shape {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.pizza-builder-section .shape-1 {
+  top: 20%;
+  left: 5%;
+  width: 130px;
+  height: 130px;
+}
+
+.pizza-builder-section .shape-2 {
+  bottom: 20%;
+  right: 5%;
+  width: 110px;
+  height: 110px;
+}
+
+.about .shape {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.about .shape-1 {
+  top: 15%;
+  left: 5%;
+  width: 140px;
+  height: 140px;
+}
+
+.about .shape-2 {
+  bottom: 15%;
+  right: 5%;
+  width: 120px;
+  height: 120px;
+}
+
+.shape img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Badge stamp styling */
+.badge-stamp {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.stamp-image {
+  width: 165px !important;
+  height: 165px !important;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  border: 4px solid #d2691e;
+  background: white;
+  padding: 8px;
+  transform: rotate(-5deg);
+  transition: all 0.3s ease;
+  object-fit: cover;
+}
+
+.stamp-image:hover {
+  transform: rotate(0deg) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* About banner positioning */
+.about-banner {
+  position: relative;
+  margin: 40px auto;
+  max-width: 580px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-banner img {
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Maps section shapes */
+.maps-section .shape {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.maps-section .shape-1 {
+  top: 15%;
+  left: 5%;
+  width: 140px;
+  height: 140px;
+}
+
+.maps-section .shape-2 {
+  bottom: 20%;
+  right: 5%;
+  width: 120px;
+  height: 120px;
+}
+
+/* Gallery section shapes */
+.gallery-section .shape {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.gallery-section .shape-1 {
+  top: 10%;
+  right: 5%;
+  width: 130px;
+  height: 130px;
+}
+
+.gallery-section .shape-2 {
+  bottom: 15%;
+  left: 5%;
+  width: 110px;
+  height: 110px;
+}
+
+/* Responsive adjustments for shapes */
+@media (max-width: 1200px) {
+  .shape {
+    display: none;
+  }
+} 
+
+/* Footer section shapes */
+.footer .shape {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.footer .shape-1 {
+  top: 15%;
+  left: 5%;
+  width: 130px;
+  height: 130px;
+}
+
+.footer .shape-2 {
+  bottom: 20%;
+  right: 5%;
+  width: 110px;
+  height: 110px;
 } 
