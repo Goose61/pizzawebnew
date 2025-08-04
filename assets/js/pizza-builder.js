@@ -1,4 +1,4 @@
-// Pizza Builder - Fixed Implementation
+// Pizza Builder - Cross-Platform Implementation
 const pizzaContainer = document.getElementById('pizza-container');
 const pizzaSection = document.querySelector('.pizza-builder-section');
 const crust = document.getElementById('crust');
@@ -187,5 +187,4 @@ window.addEventListener('touchmove', handleTouchMove, { passive: false });
 
 // Initialize
 detectTouchDevice();
-animatePizza(0); 
 animatePizza(0); 

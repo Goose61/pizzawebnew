@@ -229,11 +229,11 @@
   }
 }
 
-/* Fixed Pizza Builder Section Styles */
+/* Pizza Builder Section - Consistent across desktop and mobile */
 .pizza-builder-section {
   position: relative;
   background: #fff8e1;
-  height: 120vh; /* Extended height to prevent overlap */
+  height: 120vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -244,22 +244,22 @@
 
 /* Pizza-themed text colors for the section */
 .pizza-builder-section .section-subtitle {
-  color: #d2691e !important; /* Pizza crust color */
+  color: #d2691e !important;
 }
 
 .pizza-builder-section .section-title {
-  color: #c0392b !important; /* Pizza sauce color */
+  color: #c0392b !important;
 }
 
 .pizza-builder-section .section-text {
-  color: #8B4513 !important; /* Darker pizza crust color */
+  color: #8B4513 !important;
 }
 
 #pizza-container {
   position: relative;
   width: 300px;
   height: 300px;
-  margin-top: 80px; /* Increased margin to move pizza further down */
+  margin-top: 80px;
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 10;
@@ -318,19 +318,19 @@
   box-shadow: inset 0 0 5px #8e2a23;
 }
 
-/* Layer info styles - positioned in corners around pizza - BIGGER */
+/* Layer info styles - positioned in corners around pizza */
 .layer-info {
   position: absolute;
   background: rgba(0, 0, 0, 0.9);
-  color: #d2691e; /* Pizza crust color for text */
-  padding: 35px; /* Increased padding */
-  border-radius: 20px; /* Increased border radius */
-  max-width: 400px; /* Increased max-width */
+  color: #d2691e;
+  padding: 35px;
+  border-radius: 20px;
+  max-width: 400px;
   z-index: 1001;
   opacity: 0;
   transition: opacity 0.3s ease;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
-  border: 3px solid rgba(255, 255, 255, 0.15); /* Thicker border */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  border: 3px solid rgba(255, 255, 255, 0.15);
 }
 
 .layer-info.active {
@@ -338,20 +338,20 @@
 }
 
 .layer-info h4 {
-  margin: 0 0 20px 0; /* Increased margin */
-  font-size: 1.8rem; /* Increased font size */
-  color: #f7dc6f; /* Keep gold for headers */
+  margin: 0 0 20px 0;
+  font-size: 1.8rem;
+  color: #f7dc6f;
   font-weight: bold;
 }
 
 .layer-info p {
   margin: 0;
-  font-size: 1.2rem; /* Increased font size */
-  line-height: 1.6; /* Increased line height */
-  color: #d2691e; /* Pizza crust color for paragraph text */
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #d2691e;
 }
 
-/* Corner positioning around the pizza - moved down to avoid title overlap */
+/* Corner positioning around the pizza */
 #crust-info {
   top: 45%;
   right: 20%;
@@ -429,10 +429,10 @@
   line-height: 1.6;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments - Only styling changes, same functionality */
 @media (max-width: 768px) {
   .pizza-builder-section {
-    height: 110vh; /* Slightly less extension on tablet */
+    height: 110vh;
   }
   
   #pizza-container {
@@ -461,7 +461,7 @@
   }
   
   .layer-info {
-    max-width: 350px; /* Adjusted for tablet */
+    max-width: 350px;
     padding: 30px;
   }
   
@@ -503,7 +503,7 @@
 
 @media (max-width: 480px) {
   .pizza-builder-section {
-    height: auto; /* Auto height on mobile */
+    height: auto;
     min-height: 100vh;
   }
   
@@ -561,18 +561,15 @@
 /* Mobile-specific touch improvements */
 @media (max-width: 768px) {
   .pizza-builder-section {
-    /* Ensure proper touch scrolling */
     -webkit-overflow-scrolling: touch;
     overflow: hidden;
   }
   
-  /* Improve touch targets */
   .layer-info {
     min-height: 60px;
     touch-action: manipulation;
   }
   
-  /* Better mobile spacing */
   .pizza-builder-section .section-subtitle {
     font-size: 1rem;
     margin-bottom: 10px;
@@ -603,19 +600,16 @@
 
 /* Additional mobile optimizations for pizza builder */
 @media (max-width: 768px) {
-  /* Ensure pizza builder section is properly sized for mobile */
   .pizza-builder-section {
     min-height: 100vh;
     height: auto;
     padding: 10px;
   }
   
-  /* Improve touch interaction for pizza layers */
   .pizza-layer {
     touch-action: pan-y;
   }
   
-  /* Better mobile layout for layer info */
   .layer-info {
     position: relative !important;
     margin: 10px auto !important;
@@ -623,7 +617,6 @@
     transform: none !important;
   }
   
-  /* Stack layer info vertically on mobile */
   #crust-info, #sauce-info, #cheese-info, #toppings-info {
     position: relative !important;
     top: auto !important;
