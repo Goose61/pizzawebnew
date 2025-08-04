@@ -8,6 +8,58 @@
   animation: spin 3s linear infinite;
 }
 
+/* Enhanced Mobile Preloader Optimization */
+@media (max-width: 768px) {
+  .preload {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    overflow: hidden;
+  }
+
+  .preload .circle {
+    width: 80px;
+    height: 80px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    animation: rotate360 1s linear infinite;
+    margin-bottom: 20px;
+  }
+
+  .preload .text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 90vw;
+    word-wrap: break-word;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .preload .circle {
+    width: 60px;
+    height: 60px;
+    border-width: 3px;
+  }
+
+  .preload .text {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+}
+
 /* Map Styles */
 .map-container {
   margin: 40px 0;
@@ -114,54 +166,58 @@
 .location-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 15px;
   margin: 15px 0;
 }
 
 .location-stats .stat {
   text-align: center;
   padding: 10px;
-  background: rgba(210, 105, 30, 0.1);
+  background: rgba(139, 69, 19, 0.1);
   border-radius: 8px;
 }
 
 .location-stats .stat strong {
   display: block;
   font-size: 1.2rem;
-  color: #c0392b;
+  color: #8B4513;
+  font-weight: bold;
 }
 
 .location-stats .stat span {
   font-size: 0.8rem;
-  color: #8B4513;
+  color: #666;
 }
 
 .location-description {
-  color: #8B4513;
   margin: 15px 0;
-  line-height: 1.4;
+  line-height: 1.5;
+  color: #333;
 }
 
 .established {
+  font-size: 0.8rem;
   color: #666;
   font-style: italic;
   margin: 10px 0;
 }
 
 .contact-link {
-  display: inline-block;
-  background: linear-gradient(45deg, #d2691e, #c0392b);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 15px;
+  background: #d2691e;
   color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
   text-decoration: none;
+  border-radius: 20px;
   font-size: 0.9rem;
   transition: all 0.3s ease;
 }
 
 .contact-link:hover {
+  background: #8B4513;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes spin {
@@ -173,452 +229,413 @@
   }
 }
 
-/* Pizza Builder Section Styles */
+/* Enhanced Pizza Builder Mobile Optimization */
 .pizza-builder-section {
-    position: relative;
-    background: #fff8e1;
-    height: 120vh; /* Extended height to prevent overlap */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    padding: 20px 0;
+  padding: 80px 0;
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Pizza-themed text colors for the section */
 .pizza-builder-section .section-subtitle {
-    color: #d2691e !important; /* Pizza crust color */
+  color: #fff;
+  margin-bottom: 20px;
 }
 
 .pizza-builder-section .section-title {
-    color: #c0392b !important; /* Pizza sauce color */
+  color: #fff;
+  margin-bottom: 30px;
 }
 
 .pizza-builder-section .section-text {
-    color: #8B4513 !important; /* Darker pizza crust color */
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 50px;
 }
 
 #pizza-container {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin-top: 80px; /* Increased margin to move pizza further down */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 10;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .pizza-layer {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transform-origin: center center;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: all 0.5s ease;
 }
 
 #crust {
-    background: #d2691e;
-    border-radius: 50%;
-    box-shadow: inset 0 0 30px #b35900;
-    z-index: 1;
+  background: radial-gradient(circle, #D2B48C 0%, #A0522D 100%);
+  z-index: 1;
 }
 
 #sauce {
-    background: #c0392b;
-    border-radius: 50%;
-    width: 260px;
-    height: 260px;
-    top: 20px;
-    left: 20px;
-    box-shadow: inset 0 0 15px #8e2a23;
-    z-index: 2;
+  background: radial-gradient(circle, #DC143C 0%, #B22222 100%);
+  z-index: 2;
+  transform: scale(0.9);
 }
 
 #cheese {
-  background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
-  border-radius: 50%;
-  width: 240px;
-  height: 240px;
-  top: 30px;
-  left: 30px;
-  box-shadow: inset 0 0 15px #d1b64d;
+  background: radial-gradient(circle, #FFD700 0%, #FFA500 100%);
   z-index: 3;
+  transform: scale(0.85);
 }
 
 #toppings {
-    z-index: 4;
+  background: transparent;
+  z-index: 4;
+  transform: scale(0.8);
 }
 
+/* Fixed Pepperoni Positioning for Mobile */
 .pepperoni {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: #c0392b;
-    border-radius: 50%;
-    box-shadow: inset 0 0 5px #8e2a23;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #DC143C 0%, #B22222 100%);
+  border-radius: 50%;
+  border: 2px solid #8B0000;
 }
 
-/* Layer info styles - positioned in corners around pizza - BIGGER */
+/* Strategic pepperoni placement for better mobile display */
+.pepperoni:nth-child(1) { top: 15%; left: 20%; }
+.pepperoni:nth-child(2) { top: 25%; left: 60%; }
+.pepperoni:nth-child(3) { top: 40%; left: 15%; }
+.pepperoni:nth-child(4) { top: 45%; left: 70%; }
+.pepperoni:nth-child(5) { top: 60%; left: 25%; }
+.pepperoni:nth-child(6) { top: 65%; left: 65%; }
+.pepperoni:nth-child(7) { top: 80%; left: 35%; }
+.pepperoni:nth-child(8) { top: 85%; left: 55%; }
+
 .layer-info {
-    position: absolute;
-    background: rgba(0, 0, 0, 0.9);
-    color: #d2691e; /* Pizza crust color for text */
-    padding: 35px; /* Increased padding */
-    border-radius: 20px; /* Increased border radius */
-    max-width: 400px; /* Increased max-width */
-    z-index: 1001;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
-    border: 3px solid rgba(255, 255, 255, 0.15); /* Thicker border */
+  position: absolute;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  max-width: 250px;
+  z-index: 10;
 }
 
 .layer-info.active {
-    opacity: 1;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .layer-info h4 {
-    margin: 0 0 20px 0; /* Increased margin */
-    font-size: 1.8rem; /* Increased font size */
-    color: #f7dc6f; /* Keep gold for headers */
-    font-weight: bold;
+  color: #8B4513;
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .layer-info p {
-    margin: 0;
-    font-size: 1.2rem; /* Increased font size */
-    line-height: 1.6; /* Increased line height */
-    color: #d2691e; /* Pizza crust color for paragraph text */
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
-/* Corner positioning around the pizza - moved down to avoid title overlap */
 #crust-info {
-    top: 45%;
-    right: 20%;
-    transform: none;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #sauce-info {
-    top: 45%;
-    left: 20%;
-    transform: none;
+  top: 50%;
+  right: -280px;
+  transform: translateY(-50%);
 }
 
 #cheese-info {
-    bottom: 15%;
-    left: 20%;
-    transform: none;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #toppings-info {
-    bottom: 15%;
-    right: 20%;
-    transform: none;
+  top: 50%;
+  left: -280px;
+  transform: translateY(-50%);
 }
 
-/* Mission & Vision section improvements */
+/* Mission & Vision Blocks with Mobile Optimization */
 .mission-blocks {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin: 40px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 40px 0;
 }
 
 .mission-block, .vision-block {
-    background: linear-gradient(135deg, rgba(210, 105, 30, 0.1), rgba(192, 57, 43, 0.1));
-    border: 2px solid rgba(210, 105, 30, 0.3);
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid #d2691e;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .mission-block::before, .vision-block::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: left 0.5s ease;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(210, 105, 30, 0.1), transparent);
+  transition: left 0.5s ease;
 }
 
 .mission-block:hover::before, .vision-block:hover::before {
-    left: 100%;
+  left: 100%;
 }
 
 .mission-block:hover, .vision-block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border-color: rgba(210, 105, 30, 0.6);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 .mission-block h3, .vision-block h3 {
-    color: #d2691e;
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-    font-weight: bold;
+  color: #8B4513;
+  margin: 0 0 15px 0;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .mission-block p, .vision-block p {
-    color: #8B4513;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .pizza-builder-section {
+    padding: 60px 0;
+  }
+
+  #pizza-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .pizza-layer {
+    width: 100%;
+    height: 100%;
+  }
+
+  #sauce {
+    transform: scale(0.85);
+  }
+
+  #cheese {
+    transform: scale(0.8);
+  }
+
+  .layer-info {
+    position: static;
+    margin: 20px auto;
+    max-width: 90%;
+    opacity: 1;
+    transform: none;
+  }
+
+  .layer-info h4 {
+    font-size: 1rem;
+  }
+
+  .layer-info p {
+    font-size: 0.85rem;
+  }
+
+  #crust-info, #sauce-info, #cheese-info, #toppings-info {
+    position: static;
+    transform: none;
+    margin: 15px auto;
+  }
+
+  .mission-blocks {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Fix vision section clipping */
+  .vision-block {
+    overflow: visible;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .vision-block h3,
+  .vision-block p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .pizza-builder-section {
+    padding: 40px 0;
+  }
+
+  #pizza-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .pizza-layer {
+    width: 100%;
+    height: 100%;
+  }
+
+  #sauce {
+    transform: scale(0.8);
+  }
+
+  #cheese {
+    transform: scale(0.75);
+  }
+
+  .layer-info {
+    padding: 12px;
+    margin: 15px auto;
+  }
+
+  .layer-info h4 {
+    font-size: 0.9rem;
+  }
+
+  .layer-info p {
+    font-size: 0.8rem;
+  }
+
+  #crust-info, #sauce-info, #cheese-info, #toppings-info {
+    margin: 10px auto;
+  }
+
+  .mission-blocks {
+    gap: 15px;
+  }
+
+  .mission-block, .vision-block {
+    padding: 20px;
+  }
+
+  .mission-block h3, .vision-block h3 {
     font-size: 1.1rem;
-    line-height: 1.6;
+  }
+
+  .mission-block p, .vision-block p {
+    font-size: 0.9rem;
+  }
 }
 
-/* Responsive adjustments */
+/* Additional Mobile Optimizations */
 @media (max-width: 768px) {
-    .pizza-builder-section {
-        height: 110vh; /* Slightly less extension on tablet */
-    }
-    
-    #pizza-container {
-        width: 250px;
-        height: 250px;
-        margin-top: 60px;
-    }
-    
-    .pizza-layer {
-        width: 250px;
-        height: 250px;
-    }
-    
-    #sauce {
-        width: 220px;
-        height: 220px;
-        top: 15px;
-        left: 15px;
-    }
-    
-    #cheese {
-        width: 200px;
-        height: 200px;
-        top: 25px;
-        left: 25px;
-    }
-    
-    .layer-info {
-        max-width: 350px; /* Adjusted for tablet */
-        padding: 30px;
-    }
-    
-    .layer-info h4 {
-        font-size: 1.6rem;
-    }
-    
-    .layer-info p {
-        font-size: 1.1rem;
-    }
-    
-    /* Adjust corner positioning for smaller screens */
-    #crust-info {
-        top: 40%;
-        right: 15%;
-    }
-    
-    #sauce-info {
-        top: 40%;
-        left: 15%;
-    }
-    
-    #cheese-info {
-        bottom: 20%;
-        left: 15%;
-    }
-    
-    #toppings-info {
-        bottom: 20%;
-        right: 15%;
-    }
-    
-    /* Mission blocks responsive */
-    .mission-blocks {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+  .pizza-builder-section {
+    text-align: center;
+  }
+
+  .layer-info {
+    text-align: left;
+  }
+
+  .pizza-builder-section .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .pizza-builder-section .section-title {
+    font-size: 1.8rem;
+  }
+
+  .pizza-builder-section .section-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Enhanced Mobile Form Optimization */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Additional Mobile Optimizations for Pizza Builder */
+@media (max-width: 768px) {
+  .pizza-builder-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .pizza-layer {
+    transition: all 0.3s ease;
+  }
+
+  .layer-info {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid #d2691e;
+  }
+
+  #crust-info, #sauce-info, #cheese-info, #toppings-info {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid #d2691e;
+  }
 }
 
 @media (max-width: 480px) {
-    .pizza-builder-section {
-        height: auto; /* Auto height on mobile */
-        min-height: 100vh;
-    }
-    
-    #pizza-container {
-        width: 200px;
-        height: 200px;
-        margin-top: 40px;
-    }
-    
-    .pizza-layer {
-        width: 200px;
-        height: 200px;
-    }
-    
-    #sauce {
-        width: 180px;
-        height: 180px;
-        top: 10px;
-        left: 10px;
-    }
-    
-    #cheese {
-        width: 160px;
-        height: 160px;
-        top: 20px;
-        left: 20px;
-    }
-    
-    .layer-info {
-        position: relative;
-        margin: 10px auto !important;
-        max-width: 100%;
-        transform: none !important;
-        padding: 25px;
-    }
-    
-    .layer-info h4 {
-        font-size: 1.4rem;
-    }
-    
-    .layer-info p {
-        font-size: 1rem;
-    }
-    
-    /* Stack layer info vertically on mobile */
-    #crust-info, #sauce-info, #cheese-info, #toppings-info {
-        margin: 10px auto !important;
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
-    }
-}
+  .pizza-builder-section {
+    padding: 30px 0;
+  }
 
-/* Mobile-specific touch improvements */
-@media (max-width: 768px) {
-    .pizza-builder-section {
-        /* Ensure proper touch scrolling */
-        -webkit-overflow-scrolling: touch;
-        overflow: hidden;
-    }
-    
-    /* Improve touch targets */
-    .layer-info {
-        min-height: 60px;
-        touch-action: manipulation;
-    }
-    
-    /* Better mobile spacing */
-    .pizza-builder-section .section-subtitle {
-        font-size: 1rem;
-        margin-bottom: 10px;
-    }
-    
-    .pizza-builder-section .section-title {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
-    
-    .pizza-builder-section .section-text {
-        font-size: 0.9rem;
-        line-height: 1.4;
-    }
-}
+  #pizza-container {
+    margin: 20px auto;
+  }
 
-/* Prevent zoom on input focus for mobile */
-@media (max-width: 768px) {
-    input[type="text"],
-    input[type="password"],
-    input[type="email"],
-    input[type="number"],
-    select,
-    textarea {
-        font-size: 16px !important;
-    }
-}
+  .pizza-layer {
+    border-radius: 50%;
+  }
 
-/* Additional mobile optimizations for pizza builder */
-@media (max-width: 768px) {
-    /* Ensure pizza builder section is properly sized for mobile */
-    .pizza-builder-section {
-        min-height: 100vh;
-        height: auto;
-        padding: 10px;
-    }
-    
-    /* Improve touch interaction for pizza layers */
-    .pizza-layer {
-        touch-action: pan-y;
-    }
-    
-    /* Better mobile layout for layer info */
-    .layer-info {
-        position: relative !important;
-        margin: 10px auto !important;
-        max-width: 90% !important;
-        transform: none !important;
-    }
-    
-    /* Stack layer info vertically on mobile */
-    #crust-info, #sauce-info, #cheese-info, #toppings-info {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        margin: 10px auto !important;
-    }
-}
+  .layer-info {
+    margin: 10px auto;
+    padding: 10px;
+  }
 
-/* Extra small mobile devices */
-@media (max-width: 480px) {
-    .pizza-builder-section {
-        padding: 5px;
-    }
-    
-    #pizza-container {
-        width: 180px;
-        height: 180px;
-        margin-top: 20px;
-    }
-    
-    .pizza-layer {
-        width: 180px;
-        height: 180px;
-    }
-    
-    #sauce {
-        width: 160px;
-        height: 160px;
-        top: 10px;
-        left: 10px;
-    }
-    
-    #cheese {
-        width: 140px;
-        height: 140px;
-        top: 20px;
-        left: 20px;
-    }
-    
-    .layer-info {
-        padding: 15px;
-        font-size: 0.9rem;
-    }
-    
-    .layer-info h4 {
-        font-size: 1.2rem;
-    }
-    
-    .layer-info p {
-        font-size: 0.8rem;
-    }
+  .layer-info h4 {
+    margin-bottom: 5px;
+  }
+
+  .layer-info p {
+    margin: 0;
+  }
+
+  #crust-info, #sauce-info, #cheese-info, #toppings-info {
+    margin: 8px auto;
+  }
 } 

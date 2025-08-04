@@ -77,10 +77,12 @@ let isInPizzaSection = false;
 let isPizzaBuilt = false;
 let hasCompletedBuildOnce = false;
 
-// Touch variables for mobile support
+// Enhanced touch variables for mobile support
 let touchStartY = 0;
 let touchStartProgress = 0;
 let isTouchDevice = false;
+let isTouchActive = false;
+let touchSensitivity = 150; // Adjustable sensitivity for mobile
 
 // Wheel event handler for precise control (desktop)
 function handleWheel(e) {
@@ -108,7 +110,7 @@ function handleWheel(e) {
     }
 }
 
-// Scroll event to detect pizza section
+// Enhanced scroll event to detect pizza section
 window.addEventListener('scroll', (e) => {
     const sectionRect = pizzaSection.getBoundingClientRect();
     
@@ -144,24 +146,28 @@ window.addEventListener('scroll', (e) => {
     }
 });
 
-// Touch event handlers for mobile support
+// Enhanced touch event handlers for mobile support
 function handleTouchStart(e) {
     if (!isInPizzaSection || hasCompletedBuildOnce) return;
     
+    isTouchActive = true;
     touchStartY = e.touches[0].clientY;
     touchStartProgress = buildProgress;
+    
+    // Prevent default to avoid scrolling
+    e.preventDefault();
 }
 
 function handleTouchMove(e) {
-    if (!isInPizzaSection || hasCompletedBuildOnce) return;
+    if (!isInPizzaSection || hasCompletedBuildOnce || !isTouchActive) return;
     
     e.preventDefault();
     
     const touchY = e.touches[0].clientY;
     const deltaY = touchStartY - touchY;
     
-    // Adjust build progress based on touch movement
-    buildProgress = touchStartProgress + (deltaY / 200); // Adjust sensitivity
+    // Adjust build progress based on touch movement with improved sensitivity
+    buildProgress = touchStartProgress + (deltaY / touchSensitivity);
     buildProgress = clamp(buildProgress, 0, 1);
     
     // Check if pizza is fully built
@@ -170,21 +176,85 @@ function handleTouchMove(e) {
     // If fully built, mark as completed
     if (isPizzaBuilt) {
         hasCompletedBuildOnce = true;
+        isTouchActive = false;
     }
 }
 
-// Detect touch device
+function handleTouchEnd(e) {
+    if (!isInPizzaSection || hasCompletedBuildOnce) return;
+    
+    isTouchActive = false;
+    
+    // If fully built, allow normal scrolling
+    if (isPizzaBuilt) {
+        hasCompletedBuildOnce = true;
+    }
+}
+
+// Enhanced detect touch device with better detection
 function detectTouchDevice() {
-    isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    isTouchDevice = 'ontouchstart' in window || 
+                   navigator.maxTouchPoints > 0 || 
+                   navigator.msMaxTouchPoints > 0;
+    
+    // Adjust sensitivity based on device
+    if (isTouchDevice) {
+        // Increase sensitivity for mobile devices
+        touchSensitivity = 100;
+        
+        // Add visual feedback for mobile users
+        if (pizzaSection) {
+            pizzaSection.style.touchAction = 'none';
+        }
+    }
+}
+
+// Add mobile-specific optimizations
+function addMobileOptimizations() {
+    if (isTouchDevice) {
+        // Add haptic feedback if available
+        if (navigator.vibrate) {
+            // Vibrate when pizza is complete
+            const originalAnimatePizza = animatePizza;
+            animatePizza = function(progress) {
+                const result = originalAnimatePizza(progress);
+                if (result && !hasCompletedBuildOnce) {
+                    navigator.vibrate(200);
+                }
+                return result;
+            };
+        }
+        
+        // Add visual indicators for mobile
+        if (pizzaSection) {
+            const mobileHint = document.createElement('div');
+            mobileHint.innerHTML = '<p style="text-align: center; color: rgba(255,255,255,0.8); font-size: 0.9rem; margin: 10px 0;">👆 Swipe up to build your pizza!</p>';
+            mobileHint.style.position = 'absolute';
+            mobileHint.style.top = '20px';
+            mobileHint.style.left = '50%';
+            mobileHint.style.transform = 'translateX(-50%)';
+            mobileHint.style.zIndex = '10';
+            pizzaSection.appendChild(mobileHint);
+            
+            // Remove hint after first interaction
+            const removeHint = () => {
+                mobileHint.remove();
+                window.removeEventListener('touchstart', removeHint);
+            };
+            window.addEventListener('touchstart', removeHint);
+        }
+    }
 }
 
 // Prevent default scroll behavior in pizza section
 window.addEventListener('wheel', handleWheel, { passive: false });
 
-// Add touch event listeners for mobile
+// Add enhanced touch event listeners for mobile
 window.addEventListener('touchstart', handleTouchStart, { passive: false });
 window.addEventListener('touchmove', handleTouchMove, { passive: false });
+window.addEventListener('touchend', handleTouchEnd, { passive: false });
 
 // Initialize
 detectTouchDevice();
+addMobileOptimizations();
 animatePizza(0); 
