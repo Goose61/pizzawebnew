@@ -184,6 +184,9 @@ body {
   line-height: var(--lineHeight-5);
   overflow: hidden;
   height: 300vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body.loaded { overflow: overlay; }
@@ -240,16 +243,28 @@ body.nav-active { overflow: hidden; }
 .body-1 {
   font-size: var(--fontSize-body-1);
   line-height: var(--lineHeight-6);
+  font-weight: var(--weight-regular);
+  letter-spacing: 0.02em;
 }
 
 .body-2 {
   font-size: var(--fontSize-body-2);
   line-height: var(--lineHeight-4);
+  font-weight: var(--weight-regular);
+  letter-spacing: 0.01em;
 }
 
-.body-3 { font-size: var(--fontSize-body-3); }
+.body-3 { 
+  font-size: var(--fontSize-body-3);
+  font-weight: var(--weight-regular);
+  letter-spacing: 0.01em;
+}
 
-.body-4 { font-size: var(--fontSize-body-4); }
+.body-4 { 
+  font-size: var(--fontSize-body-4);
+  font-weight: var(--weight-regular);
+  letter-spacing: 0.01em;
+}
 
 .label-1 { font-size: var(--fontSize-label-1); }
 

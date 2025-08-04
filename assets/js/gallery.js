@@ -1,5 +1,5 @@
 // Enhanced Gallery JavaScript - Based on Anime.js Gallery
-// Pizza-themed gallery with campaign photos and vintage menu
+// Crypto and $PIZZA token focused gallery
 
 // Initialize HammerJS for touch gestures
 var element = document.getElementById('mobile_control');
@@ -31,7 +31,7 @@ $(".action").on("click", function(){
 
 // Initialize title animations
 $('.title').each(function(){
-  $(this).html("Pizza Community".replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+  $(this).html("$PIZZA Ecosystem".replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 });
 
 // Initial title animation
@@ -92,11 +92,11 @@ function cmove(dir){
   
   $(".active").removeClass("active");
   $("#p" + planet_id).addClass("active");
-  $(".info_back h1").text(pizza_community[next_id]);
+  $(".info_back h1").text(pizza_ecosystem[next_id]);
   
   if(swiped_top){
     $('.info_back h1').each(function(){
-      $(this).html(pizza_community[planet_id].replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+      $(this).html(pizza_ecosystem[planet_id].replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
     });
     
     anime.timeline({})
@@ -120,7 +120,7 @@ function cmove(dir){
   }
   
   $('.title').each(function(){
-    $(this).html(pizza_community[next_id].replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+    $(this).html(pizza_ecosystem[next_id].replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
   });
   
   anime.timeline({})
@@ -137,7 +137,7 @@ function cmove(dir){
   });
   
   $('.pn').each(function(){
-    $(this).html(pizza_community[next_id].replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+    $(this).html(pizza_ecosystem[next_id].replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
   });
   
   anime.timeline({})
@@ -205,7 +205,7 @@ function openmodal(){
   
   // Update the modal content with current planet data
   $('.info_back h1').each(function(){
-    $(this).html(pizza_community[planet_id].replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+    $(this).html(pizza_ecosystem[planet_id].replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
   });
   
   // Update the modal content to show the correct item
@@ -216,7 +216,7 @@ function openmodal(){
   $(".planet_photo").css("background-image", "url(" + photo_pizza[planet_id] +")");
   
   // Update the modal content with the correct planet data
-  $(".info_back h1").text(pizza_community[planet_id]);
+  $(".info_back h1").text(pizza_ecosystem[planet_id]);
   
   anime.timeline({})
   .add({
@@ -254,7 +254,7 @@ function closemodal(){
   swiped_top = false;
 }
 
-// Pizza community data arrays
+// Pizza ecosystem data arrays
 const photo_pizza = [
   "./assets/images/pizza/campaign-gallery/photo_1_2025-08-01_12-08-13.jpg",
   "./assets/images/pizza/campaign-gallery/photo_2_2025-08-01_12-08-13.jpg", 
@@ -267,16 +267,16 @@ const photo_pizza = [
   "./assets/images/pizza/campaign-gallery/photo_9_2025-08-01_12-08-13.jpg"
 ];
 
-var pizza_community = [
-  "Pizza Community",
-  "Pizza Campaign", 
-  "Community Events",
-  "Pizza Innovation",
-  "Global Reach",
-  "Pizza Education",
-  "Future Vision",
-  "Community Impact",
-  "Pizza Technology"
+var pizza_ecosystem = [
+  "$PIZZA Token",
+  "Atomic Swaps", 
+  "DeFi Rewards",
+  "Community DAO",
+  "Staking Protocol",
+  "NFT Marketplace",
+  "Cross-Chain Bridge",
+  "Governance System",
+  "Ecosystem Growth"
 ]; 
 
 // Initialize gallery when page loads

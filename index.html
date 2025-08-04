@@ -197,6 +197,21 @@
           <a href="#" class="body-1 contact-number hover-underline">
             4AkCN6KLeCmUDjWLg4XyQpuZuWtwBdPcbtBQjsA2pump
           </a>
+
+          <div class="separator"></div>
+
+          <!-- Social Buttons in Hamburger Menu -->
+          <div class="social-buttons">
+            <a href="https://t.me/+PrL-wbxrW39kODBk" class="social-btn telegram-btn">
+              <ion-icon name="logo-telegram"></ion-icon>
+              <span>Join Telegram</span>
+            </a>
+            
+            <a href="https://x.com/Pizza_on__Sol" class="social-btn x-btn">
+              <ion-icon name="logo-twitter"></ion-icon>
+              <span>Follow on X</span>
+            </a>
+          </div>
         </div>
 
       </nav>
@@ -298,18 +313,101 @@
         </ul>
 
         <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
-          <ion-icon name="chevron-back"></ion-icon>
+          <div class="btn-icon">
+            <ion-icon name="chevron-back" aria-hidden="true"></ion-icon>
+            <ion-icon name="chevron-back" aria-hidden="true"></ion-icon>
+          </div>
         </button>
 
         <button class="slider-btn next" aria-label="slide to next" data-next-btn>
-          <ion-icon name="chevron-forward"></ion-icon>
+          <div class="btn-icon">
+            <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+            <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+          </div>
         </button>
 
-        <a href="coming-soon.html" class="hero-btn has-after">
-          <img src="./assets/images/hero-icon.png" width="48" height="48" alt="signup icon">
-          <span class="label-2 text-center span">Sign Up</span>
+        <a href="#pizza-builder" class="hero-btn has-before" aria-label="scroll down">
+          <div class="icon">
+            <ion-icon name="arrow-down" aria-hidden="true"></ion-icon>
+          </div>
+
+          <span class="span">Scroll</span>
         </a>
 
+      </section>
+
+      <!-- 
+        - #MARKETING SECTION
+      -->
+
+      <section class="marketing-section section" aria-label="marketing" id="marketing">
+        <div class="container">
+
+          <!-- Background Shapes -->
+          <div class="shape shape-1">
+            <img src="./assets/images/shape-1.png" alt="Pizza Shape">
+          </div>
+          <div class="shape shape-2">
+            <img src="./assets/images/shape-2.png" alt="Pizza Shape">
+          </div>
+          <div class="shape shape-3">
+            <img src="./assets/images/shape-3.png" alt="Pizza Shape">
+          </div>
+
+          <p class="section-subtitle text-center">🚀 PIZZA EXCHANGE PLATFORM</p>
+
+          <h2 class="headline-1 section-title text-center">
+            Who We Are & What We Do
+          </h2>
+
+          <p class="section-text text-center">
+            We are Pizza Coin, a revolutionary crypto-native payment and loyalty platform that bridges the gap between traditional commerce and blockchain technology. Our exchange platform enables seamless transactions using $PIZZA tokens while providing businesses with instant USDC payments and customers with valuable rewards.
+          </p>
+
+          <div class="marketing-grid">
+
+            <div class="marketing-card">
+              <div class="card-icon">
+                <ion-icon name="wallet-outline"></ion-icon>
+              </div>
+              <h3>Atomic Swaps</h3>
+              <p>Instant conversion of $PIZZA tokens to USDC ensures businesses receive stable payments without crypto volatility risk. Our atomic swap technology guarantees secure, fast transactions.</p>
+            </div>
+
+            <div class="marketing-card">
+              <div class="card-icon">
+                <ion-icon name="gift-outline"></ion-icon>
+              </div>
+              <h3>Rewards System</h3>
+              <p>Customers earn $PIZZA tokens with every transaction, which can be staked for yield, redeemed for discounts, or used to unlock exclusive NFTs and community perks.</p>
+            </div>
+
+            <div class="marketing-card">
+              <div class="card-icon">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>
+              </div>
+              <h3>Secure & Compliant</h3>
+              <p>Full KYC/AML integration, end-to-end encryption, and robust authentication ensure your transactions are secure while maintaining regulatory compliance.</p>
+            </div>
+
+            <div class="marketing-card">
+              <div class="card-icon">
+                <ion-icon name="business-outline"></ion-icon>
+              </div>
+              <h3>Business Benefits</h3>
+              <p>Businesses receive instant USDC payments, eliminating crypto management complexity. Custom loyalty programs and analytics help drive customer engagement.</p>
+            </div>
+
+          </div>
+
+          <div class="marketing-cta">
+            <a href="coming-soon.html" class="btn btn-primary">
+              <span class="text text-1">Register Now</span>
+              <span class="text text-2" aria-hidden="true">Register Now</span>
+            </a>
+          </div>
+
+        </div>
       </section>
 
       <!-- 
@@ -335,30 +433,24 @@
           <div id="sauce" class="pizza-layer"></div>
           <div id="cheese" class="pizza-layer"></div>
           <div id="toppings" class="pizza-layer">
-            <!-- Pepperoni positions - STRICTLY within sauce layer boundaries (20px to 280px) minus 15px = 35px to 265px -->
+            <!-- Pepperoni positions - STRICTLY within sauce layer boundaries (20px to 280px) minus 20px = 40px to 260px -->
             <!-- Top left quadrant -->
-            <div class="pepperoni" style="top: 40px; left: 40px;"></div>
-            <div class="pepperoni" style="top: 70px; left: 80px;"></div>
-            <div class="pepperoni" style="top: 100px; left: 60px;"></div>
+            <div class="pepperoni" style="top: 50px; left: 60px;"></div>
+            <div class="pepperoni" style="top: 90px; left: 80px;"></div>
             
             <!-- Top right quadrant -->
-            <div class="pepperoni" style="top: 50px; left: 200px;"></div>
-            <div class="pepperoni" style="top: 80px; left: 220px;"></div>
-            <div class="pepperoni" style="top: 110px; left: 240px;"></div>
+            <div class="pepperoni" style="top: 60px; left: 200px;"></div>
+            <div class="pepperoni" style="top: 100px; left: 220px;"></div>
             
             <!-- Bottom left quadrant -->
-            <div class="pepperoni" style="top: 160px; left: 50px;"></div>
-            <div class="pepperoni" style="top: 190px; left: 70px;"></div>
+            <div class="pepperoni" style="top: 180px; left: 70px;"></div>
             <div class="pepperoni" style="top: 220px; left: 90px;"></div>
             
             <!-- Bottom right quadrant -->
-            <div class="pepperoni" style="top: 170px; left: 200px;"></div>
-            <div class="pepperoni" style="top: 200px; left: 220px;"></div>
-            <div class="pepperoni" style="top: 230px; left: 240px;"></div>
+            <div class="pepperoni" style="top: 190px; left: 200px;"></div>
             
             <!-- Center area -->
-            <div class="pepperoni" style="top: 130px; left: 130px;"></div>
-            <div class="pepperoni" style="top: 150px; left: 150px;"></div>
+            <div class="pepperoni" style="top: 140px; left: 140px;"></div>
           </div>
         </div>
 

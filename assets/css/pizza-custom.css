@@ -8,6 +8,411 @@
   animation: spin 3s linear infinite;
 }
 
+/* Mobile Logo Optimization */
+@media (max-width: 768px) {
+  .header .logo img {
+    width: 120px;
+    height: 38px;
+  }
+  
+  .navbar .logo img {
+    width: 120px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header .logo img {
+    width: 100px;
+    height: 32px;
+  }
+  
+  .navbar .logo img {
+    width: 100px;
+    height: 32px;
+  }
+}
+
+/* Social Buttons in Hamburger Menu */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: var(--weight-bold);
+  font-size: 1.4rem;
+}
+
+.telegram-btn {
+  background: linear-gradient(135deg, #0088cc, #00a8ff);
+  color: white;
+}
+
+.telegram-btn:hover {
+  background: linear-gradient(135deg, #0077b3, #0099e6);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 136, 204, 0.3);
+}
+
+.x-btn {
+  background: linear-gradient(135deg, #000000, #333333);
+  color: white;
+}
+
+.x-btn:hover {
+  background: linear-gradient(135deg, #1a1a1a, #404040);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-btn ion-icon {
+  font-size: 1.8rem;
+}
+
+/* Marketing Section Styles */
+.marketing-section {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffe4b3 50%, #ffdab9 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.marketing-section .section-subtitle {
+  color: #d2691e;
+  font-weight: var(--weight-bold);
+}
+
+.marketing-section .section-title {
+  color: #8B4513;
+  margin-bottom: 20px;
+}
+
+.marketing-section .section-text {
+  color: #654321;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.marketing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.marketing-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(210, 105, 30, 0.2);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.marketing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.marketing-card:hover::before {
+  left: 100%;
+}
+
+.marketing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-color: rgba(210, 105, 30, 0.5);
+}
+
+.marketing-card .card-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #d2691e, #cd853f);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  transition: all 0.3s ease;
+}
+
+.marketing-card:hover .card-icon {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(210, 105, 30, 0.3);
+}
+
+.marketing-card .card-icon ion-icon {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.marketing-card h3 {
+  color: #8B4513;
+  font-size: 1.6rem;
+  font-weight: var(--weight-bold);
+  margin-bottom: 12px;
+}
+
+.marketing-card p {
+  color: #654321;
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.marketing-cta {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.marketing-cta .btn {
+  background: linear-gradient(135deg, #d2691e, #cd853f);
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  padding: 15px 40px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.marketing-cta .btn:hover {
+  background: linear-gradient(135deg, #b35900, #d2691e);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(210, 105, 30, 0.3);
+}
+
+/* Background Shapes for Marketing Section */
+.marketing-section .shape {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.marketing-section .shape-1 {
+  top: 10%;
+  right: 5%;
+  width: 150px;
+  height: 150px;
+}
+
+.marketing-section .shape-2 {
+  bottom: 15%;
+  left: 5%;
+  width: 120px;
+  height: 120px;
+}
+
+.marketing-section .shape-3 {
+  top: 50%;
+  right: 15%;
+  width: 100px;
+  height: 100px;
+}
+
+.marketing-section .shape img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Mission & Vision section improvements */
+.mission-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.mission-block, .vision-block {
+  background: linear-gradient(135deg, rgba(210, 105, 30, 0.1), rgba(192, 57, 43, 0.1));
+  border: 2px solid rgba(210, 105, 30, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.mission-block::before, .vision-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.mission-block:hover::before, .vision-block:hover::before {
+  left: 100%;
+}
+
+.mission-block:hover, .vision-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-color: rgba(210, 105, 30, 0.6);
+}
+
+.mission-block h3, .vision-block h3 {
+  color: #d2691e;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mission-block p, .vision-block p {
+  color: #8B4513;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Standardized Section Spacing */
+.section {
+  padding-block: 80px 60px;
+}
+
+.section-subtitle {
+  margin-bottom: 15px;
+}
+
+.section-title {
+  margin-bottom: 25px;
+}
+
+.section-text {
+  margin-bottom: 40px;
+}
+
+/* Mobile Responsive for Marketing Section */
+@media (max-width: 1200px) {
+  .marketing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .marketing-card {
+    padding: 30px;
+  }
+  
+  .marketing-card h3 {
+    font-size: 1.8rem;
+  }
+  
+  .marketing-card p {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .marketing-section .section-text {
+    font-size: 1.6rem;
+    padding: 0 20px;
+  }
+  
+  .marketing-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  .marketing-card {
+    padding: 25px;
+  }
+  
+  .marketing-card h3 {
+    font-size: 1.8rem;
+  }
+  
+  .marketing-card p {
+    font-size: 1.4rem;
+  }
+  
+  .marketing-section .shape {
+    display: none;
+  }
+  
+  /* Mission blocks responsive */
+  .mission-blocks {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .mission-block, .vision-block {
+    padding: 30px;
+  }
+  
+  .mission-block h3, .vision-block h3 {
+    font-size: 1.8rem;
+  }
+  
+  .mission-block p, .vision-block p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .marketing-section .section-text {
+    font-size: 1.4rem;
+  }
+  
+  .marketing-card {
+    padding: 20px;
+  }
+  
+  .marketing-card h3 {
+    font-size: 1.6rem;
+  }
+  
+  .marketing-card p {
+    font-size: 1.3rem;
+  }
+  
+  .marketing-cta .btn {
+    font-size: 1.6rem;
+    padding: 12px 30px;
+  }
+  
+  .mission-block, .vision-block {
+    padding: 25px;
+  }
+  
+  .mission-block h3, .vision-block h3 {
+    font-size: 1.6rem;
+  }
+  
+  .mission-block p, .vision-block p {
+    font-size: 1.2rem;
+  }
+}
+
 /* Enhanced Mobile Preloader Optimization */
 @media (max-width: 768px) {
   .preload {
@@ -259,7 +664,7 @@
   position: relative;
   width: 300px;
   height: 300px;
-  margin-top: 80px;
+  margin-top: 60px;
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 10;
@@ -311,11 +716,21 @@
 
 .pepperoni {
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   background: #c0392b;
   border-radius: 50%;
   box-shadow: inset 0 0 5px #8e2a23;
+  z-index: 4;
+}
+
+/* Ensure pepperoni stay within sauce layer boundaries */
+#toppings .pepperoni {
+  /* Sauce layer is 260px wide, positioned at 20px from left */
+  /* So pepperoni should be between 40px and 260px from left edge */
+  /* And between 40px and 260px from top edge */
+  max-width: 35px;
+  max-height: 35px;
 }
 
 /* Layer info styles - positioned in corners around pizza */
@@ -374,188 +789,6 @@
   bottom: 15%;
   right: 20%;
   transform: none;
-}
-
-/* Mission & Vision section improvements */
-.mission-blocks {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin: 40px 0;
-}
-
-.mission-block, .vision-block {
-  background: linear-gradient(135deg, rgba(210, 105, 30, 0.1), rgba(192, 57, 43, 0.1));
-  border: 2px solid rgba(210, 105, 30, 0.3);
-  border-radius: 20px;
-  padding: 30px;
-  text-align: center;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.mission-block::before, .vision-block::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transition: left 0.5s ease;
-}
-
-.mission-block:hover::before, .vision-block:hover::before {
-  left: 100%;
-}
-
-.mission-block:hover, .vision-block:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  border-color: rgba(210, 105, 30, 0.6);
-}
-
-.mission-block h3, .vision-block h3 {
-  color: #d2691e;
-  font-size: 1.6rem;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-.mission-block p, .vision-block p {
-  color: #8B4513;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* Responsive adjustments - Only styling changes, same functionality */
-@media (max-width: 768px) {
-  .pizza-builder-section {
-    height: 110vh;
-  }
-  
-  #pizza-container {
-    width: 250px;
-    height: 250px;
-    margin-top: 60px;
-  }
-  
-  .pizza-layer {
-    width: 250px;
-    height: 250px;
-  }
-  
-  #sauce {
-    width: 220px;
-    height: 220px;
-    top: 15px;
-    left: 15px;
-  }
-  
-  #cheese {
-    width: 200px;
-    height: 200px;
-    top: 25px;
-    left: 25px;
-  }
-  
-  .layer-info {
-    max-width: 350px;
-    padding: 30px;
-  }
-  
-  .layer-info h4 {
-    font-size: 1.6rem;
-  }
-  
-  .layer-info p {
-    font-size: 1.1rem;
-  }
-  
-  /* Adjust corner positioning for smaller screens */
-  #crust-info {
-    top: 40%;
-    right: 15%;
-  }
-  
-  #sauce-info {
-    top: 40%;
-    left: 15%;
-  }
-  
-  #cheese-info {
-    bottom: 20%;
-    left: 15%;
-  }
-  
-  #toppings-info {
-    bottom: 20%;
-    right: 15%;
-  }
-  
-  /* Mission blocks responsive */
-  .mission-blocks {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .pizza-builder-section {
-    height: auto;
-    min-height: 100vh;
-  }
-  
-  #pizza-container {
-    width: 200px;
-    height: 200px;
-    margin-top: 40px;
-  }
-  
-  .pizza-layer {
-    width: 200px;
-    height: 200px;
-  }
-  
-  #sauce {
-    width: 180px;
-    height: 180px;
-    top: 10px;
-    left: 10px;
-  }
-  
-  #cheese {
-    width: 160px;
-    height: 160px;
-    top: 20px;
-    left: 20px;
-  }
-  
-  .layer-info {
-    position: relative;
-    margin: 10px auto !important;
-    max-width: 100%;
-    transform: none !important;
-    padding: 25px;
-  }
-  
-  .layer-info h4 {
-    font-size: 1.4rem;
-  }
-  
-  .layer-info p {
-    font-size: 1rem;
-  }
-  
-  /* Stack layer info vertically on mobile */
-  #crust-info, #sauce-info, #cheese-info, #toppings-info {
-    margin: 10px auto !important;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
-  }
 }
 
 /* Mobile-specific touch improvements */
@@ -669,5 +902,128 @@
   
   .layer-info p {
     font-size: 0.8rem;
+  }
+} 
+
+/* Responsive adjustments - Only styling changes, same functionality */
+@media (max-width: 768px) {
+  .pizza-builder-section {
+    height: 110vh;
+  }
+  
+  #pizza-container {
+    width: 250px;
+    height: 250px;
+    margin-top: 60px;
+  }
+  
+  .pizza-layer {
+    width: 250px;
+    height: 250px;
+  }
+  
+  #sauce {
+    width: 220px;
+    height: 220px;
+    top: 15px;
+    left: 15px;
+  }
+  
+  #cheese {
+    width: 200px;
+    height: 200px;
+    top: 25px;
+    left: 25px;
+  }
+  
+  .layer-info {
+    max-width: 350px;
+    padding: 30px;
+  }
+  
+  .layer-info h4 {
+    font-size: 1.6rem;
+  }
+  
+  .layer-info p {
+    font-size: 1.1rem;
+  }
+  
+  /* Adjust corner positioning for smaller screens */
+  #crust-info {
+    top: 40%;
+    right: 15%;
+  }
+  
+  #sauce-info {
+    top: 40%;
+    left: 15%;
+  }
+  
+  #cheese-info {
+    bottom: 20%;
+    left: 15%;
+  }
+  
+  #toppings-info {
+    bottom: 20%;
+    right: 15%;
+  }
+}
+
+@media (max-width: 480px) {
+  .pizza-builder-section {
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  #pizza-container {
+    width: 200px;
+    height: 200px;
+    margin-top: 40px;
+  }
+  
+  .pizza-layer {
+    width: 200px;
+    height: 200px;
+  }
+  
+  #sauce {
+    width: 180px;
+    height: 180px;
+    top: 10px;
+    left: 10px;
+  }
+  
+  #cheese {
+    width: 160px;
+    height: 160px;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .layer-info {
+    position: relative;
+    margin: 10px auto !important;
+    max-width: 100%;
+    transform: none !important;
+    padding: 25px;
+  }
+  
+  .layer-info h4 {
+    font-size: 1.4rem;
+  }
+  
+  .layer-info p {
+    font-size: 1rem;
+  }
+  
+  /* Stack layer info vertically on mobile */
+  #crust-info, #sauce-info, #cheese-info, #toppings-info {
+    margin: 10px auto !important;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
   }
 } 
