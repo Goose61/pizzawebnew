@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>🍕 PIZZA COIN 🚀 - Feeding the World, One Slice at a Time!</title>
+  <meta name="title" content="🍕 PIZZA COIN 🚀 - Feeding the World, One Slice at a Time!">
+  <meta name="description" content="Empowering communities through food, compassion, and blockchain — using the Pizza Token to feed those in need and connect Main Street to the future of finance!">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/pizza/favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/pizza-custom.css">
+  <link rel="stylesheet" href="./assets/css/gallery.css">
+
+  <!-- 
+    - anime.js for animations
+  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  
+  <!-- 
+    - jQuery for gallery functionality
+  -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <!-- 
+    - Hammer.js for touch gestures
+  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+  
+  <!-- 
+    - Material Icons for gallery
+  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- 
+    - Leaflet CSS for maps
+  -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #PRELOADER
+  -->
+
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">🍕 PIZZA COIN 🚀</p>
+  </div>
+
+  <!-- 
+    - #TOP BAR
+  -->
+
+  <div class="topbar">
+    <div class="container">
+
+      <address class="topbar-item">
+        <div class="icon">
+          <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">
+          Global Pizza Community, Feeding the World, Everywhere
+        </span>
+      </address>
+
+      <div class="separator"></div>
+
+      <div class="topbar-item item-2">
+        <div class="icon">
+          <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">24/7 : Always Serving Pizza & Hope</span>
+      </div>
+
+      <a href="https://t.me/+PrL-wbxrW39kODBk" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">Join Our Telegram</span>
+      </a>
+
+      <div class="separator"></div>
+
+      <a href="mailto:info@pizzacoin.com" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">info@pizzacoin.com</span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./assets/images/pizza/pizzaimages/main_logo.png" width="160" height="50" alt="Pizza Coin - Home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <a href="#" class="logo">
+          <img src="./assets/images/pizza/pizzaimages/main_logo.png" width="160" height="50" alt="Pizza Coin - Home">
+        </a>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#home" class="navbar-link hover-underline active">
+              <div class="separator"></div>
+              <span class="span">Home</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#mission" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Mission</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#gallery" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Gallery</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#community" class="navbar-link hover-underline">
+              <div class="separator"></div>
+              <span class="span">Community</span>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="text-center">
+          <p class="headline-1 navbar-title">Join The Movement</p>
+
+          <address class="body-4">
+            Global Pizza Community, <br>
+            Feeding the World
+          </address>
+
+          <p class="body-4 navbar-text">Open: 24/7 - Always Serving</p>
+
+          <a href="mailto:info@pizzacoin.com" class="body-4 sidebar-link">info@pizzacoin.com</a>
+
+          <div class="separator"></div>
+
+          <p class="contact-label">Contract Address</p>
+
+          <a href="#" class="body-1 contact-number hover-underline">
+            4AkCN6KLeCmUDjWLg4XyQpuZuWtwBdPcbtBQjsA2pump
+          </a>
+        </div>
+
+      </nav>
+
+      <a href="https://t.me/+PrL-wbxrW39kODBk" class="btn btn-secondary">
+        <span class="text text-1">Join Telegram</span>
+        <span class="text text-2" aria-hidden="true">Join Telegram</span>
+      </a>
+
+      <a href="https://x.com/Pizza_on__Sol" class="btn btn-secondary">
+        <span class="text text-1">Visit X</span>
+        <span class="text text-2" aria-hidden="true">Visit X</span>
+      </a>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero text-center" aria-label="home" id="home">
+
+        <ul class="hero-slider" data-hero-slider>
+
+          <li class="slider-item active" data-hero-slider-item>
+
+            <div class="slider-bg">
+              <img src="./assets/images/hero-slider-1.jpg" width="1880" height="950" alt="" class="img-cover">
+            </div>
+
+            <p class="label-2 section-subtitle slider-reveal">🔥 HOTTEST PIZZA TOKEN 🔥</p>
+
+            <h1 class="display-1 hero-title slider-reveal">
+              FEEDING THE WORLD, <br>
+              ONE SLICE AT A TIME!
+            </h1>
+
+            <p class="body-2 hero-text slider-reveal">
+              Empowering communities through food, compassion, and blockchain
+            </p>
+
+            <a href="#pizza-builder" class="btn btn-primary slider-reveal">
+              <span class="text text-1">Build $PIZZA</span>
+              <span class="text text-2" aria-hidden="true">Build $PIZZA</span>
+            </a>
+
+          </li>
+
+          <li class="slider-item" data-hero-slider-item>
+
+            <div class="slider-bg">
+              <img src="./assets/images/hero-slider-2.jpg" width="1880" height="950" alt="" class="img-cover">
+            </div>
+
+            <p class="label-2 section-subtitle slider-reveal">delightful experience</p>
+
+            <h1 class="display-1 hero-title slider-reveal">
+              Flavors Inspired by <br>
+              the Seasons
+            </h1>
+
+            <p class="body-2 hero-text slider-reveal">
+              Come with family & feel the joy of mouthwatering food
+            </p>
+
+          </li>
+
+          <li class="slider-item" data-hero-slider-item>
+
+            <div class="slider-bg">
+              <img src="./assets/images/hero-slider-3.jpg" width="1880" height="950" alt="" class="img-cover">
+            </div>
+
+            <p class="label-2 section-subtitle slider-reveal">amazing & delicious</p>
+
+            <h1 class="display-1 hero-title slider-reveal">
+              Where every flavor <br>
+              tells a story
+            </h1>
+
+            <p class="body-2 hero-text slider-reveal">
+              Come with family & feel the joy of mouthwatering food
+            </p>
+
+          </li>
+
+        </ul>
+
+        <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
+          <ion-icon name="chevron-back"></ion-icon>
+        </button>
+
+        <button class="slider-btn next" aria-label="slide to next" data-next-btn>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </button>
+
+        <a href="coming-soon.html" class="hero-btn has-after">
+          <img src="./assets/images/hero-icon.png" width="48" height="48" alt="signup icon">
+          <span class="label-2 text-center span">Sign Up</span>
+        </a>
+
+      </section>
+
+      <!-- 
+        - #PIZZA BUILDER SECTION
+      -->
+
+      <section class="section pizza-builder-section bg-black-10 text-center" aria-label="pizza-builder" id="pizza-builder">
+        <div class="container">
+
+          <p class="section-subtitle label-2">🍕 $PIZZA TOKEN LAYERS 🍕</p>
+
+          <h2 class="headline-1 section-title">Building $PIZZA Layer by Layer</h2>
+
+          <p class="section-text">
+            Discover how our $PIZZA token is structured like a perfect pizza - each layer represents a core component of our mission
+          </p>
+
+        </div>
+        
+        <!-- Pizza Builder Animation Container -->
+        <div id="pizza-container">
+          <div id="crust" class="pizza-layer"></div>
+          <div id="sauce" class="pizza-layer"></div>
+          <div id="cheese" class="pizza-layer"></div>
+          <div id="toppings" class="pizza-layer">
+            <!-- Pepperoni positions - STRICTLY within sauce layer boundaries (20px to 280px) minus 15px = 35px to 265px -->
+            <!-- Top left quadrant -->
+            <div class="pepperoni" style="top: 40px; left: 40px;"></div>
+            <div class="pepperoni" style="top: 70px; left: 80px;"></div>
+            <div class="pepperoni" style="top: 100px; left: 60px;"></div>
+            
+            <!-- Top right quadrant -->
+            <div class="pepperoni" style="top: 50px; left: 200px;"></div>
+            <div class="pepperoni" style="top: 80px; left: 220px;"></div>
+            <div class="pepperoni" style="top: 110px; left: 240px;"></div>
+            
+            <!-- Bottom left quadrant -->
+            <div class="pepperoni" style="top: 160px; left: 50px;"></div>
+            <div class="pepperoni" style="top: 190px; left: 70px;"></div>
+            <div class="pepperoni" style="top: 220px; left: 90px;"></div>
+            
+            <!-- Bottom right quadrant -->
+            <div class="pepperoni" style="top: 170px; left: 200px;"></div>
+            <div class="pepperoni" style="top: 200px; left: 220px;"></div>
+            <div class="pepperoni" style="top: 230px; left: 240px;"></div>
+            
+            <!-- Center area -->
+            <div class="pepperoni" style="top: 130px; left: 130px;"></div>
+            <div class="pepperoni" style="top: 150px; left: 150px;"></div>
+          </div>
+        </div>
+
+        <!-- Layer Info Elements -->
+        <div id="crust-info" class="layer-info">
+          <h4>🍕 Core Team</h4>
+          <p>The foundation of $PIZZA - our dedicated core team building the future of pizza finance.</p>
+        </div>
+        
+        <div id="sauce-info" class="layer-info">
+          <h4>🎯 Mission & Vision</h4>
+          <p>Our mission to revolutionize the pizza industry through blockchain technology and community-driven innovation.</p>
+        </div>
+        
+        <div id="cheese-info" class="layer-info">
+          <h4>💪 Hard Work & Dedication</h4>
+          <p>The dedication and hard work that goes into every aspect of the $PIZZA ecosystem.</p>
+        </div>
+        
+        <div id="toppings-info" class="layer-info">
+          <h4>🚀 Technology Stack</h4>
+          <p>Agent Crust AI, Pizza Defenders game, PIZZA exchange, and cutting-edge blockchain technology.</p>
+        </div>
+
+      </section>
+
+      <!-- 
+        - #MISSION SECTION
+      -->
+
+      <section class="section about text-center" aria-labelledby="about-label" id="mission">
+        <div class="container">
+
+          <div class="about-content">
+
+            <p class="label-2 section-subtitle" id="about-label">Our Story</p>
+
+            <h2 class="title-1 section-title">🍕🚀 MISSION & VISION 🚀🍕</h2>
+
+            <p class="section-text">
+              To empower communities through food, compassion, and blockchain — using the Pizza Token to feed those in need and connect Main Street to the future of finance! 🍕💎
+            </p>
+
+            <div class="mission-blocks">
+              <div class="mission-block">
+                <h3>🎯 MISSION 🍕</h3>
+                <p>To empower communities through food, compassion, and blockchain — using the Pizza Token to feed those in need and connect Main Street to the future of finance! 🍕💎</p>
+              </div>
+              <div class="vision-block">
+                <h3>👁️ VISION 🍕</h3>
+                <p>A world where no one goes hungry — where every slice shared builds bridges of peace, love, and decentralized empowerment! 🌍❤️</p>
+              </div>
+            </div>
+
+            <div class="contact-label">Contract Address</div>
+
+            <a href="#" class="body-1 contact-number hover-underline">4AkCN6KLeCmUDjWLg4XyQpuZuWtwBdPcbtBQjsA2pump</a>
+
+            <a href="https://t.me/+PrL-wbxrW39kODBk" class="btn btn-primary">
+              <span class="text text-1">Join The Movement</span>
+              <span class="text text-2" aria-hidden="true">Join The Movement</span>
+            </a>
+
+          </div>
+
+          <figure class="about-banner">
+
+            <img src="./assets/images/about-banner.jpg" width="570" height="570" loading="lazy" alt="about banner"
+              class="w-100" data-parallax-item data-parallax-speed="1">
+
+            <div class="abs-img abs-img-1 has-before" data-parallax-item data-parallax-speed="1.75">
+              <img src="./assets/images/about-abs-image.jpg" width="285" height="285" loading="lazy" alt=""
+                class="w-100">
+            </div>
+
+            <div class="abs-img abs-img-2 has-before">
+              <img src="./assets/images/badge-2.png" width="133" height="134" loading="lazy" alt="">
+            </div>
+
+          </figure>
+
+          <img src="./assets/images/shape-3.png" width="197" height="194" loading="lazy" alt="" class="shape">
+
+        </div>
+      </section>
+
+      <!-- 
+        - #GOOGLE MAPS SECTION
+      -->
+
+      <section class="section maps-section bg-black-10" aria-label="maps" id="maps">
+        <div class="container">
+
+          <p class="section-subtitle text-center label-2">Global Impact</p>
+
+          <h2 class="headline-1 section-title text-center">🍕 World Pizza Community Map 🍕</h2>
+
+          <p class="section-text text-center">
+            Explore our global pizza community locations and see where we're making a difference around the world
+          </p>
+
+          <div class="map-container">
+            <div id="world-map" style="height: 500px; width: 100%; border-radius: 15px; overflow: hidden;"></div>
+          </div>
+
+          <div class="map-stats">
+            <div class="stat-item">
+              <h3>🌍 Global Locations</h3>
+              <p class="stat-number" id="total-locations">8</p>
+            </div>
+            <div class="stat-item">
+              <h3>🍕 Meals Served</h3>
+              <p class="stat-number" id="total-meals">12,750</p>
+            </div>
+            <div class="stat-item">
+              <h3>🤝 Community Partners</h3>
+              <p class="stat-number" id="total-partners">28</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #GALLERY SECTION
+      -->
+
+      <section class="section gallery-section" aria-label="gallery" id="gallery">
+        <div class="container">
+
+          <p class="section-subtitle text-center label-2">Community Impact</p>
+
+          <h2 class="headline-1 section-title text-center">🍕 Campaign Gallery 🍕</h2>
+
+          <!-- Enhanced Gallery with Anime.js -->
+          <div class="gallery-container" id="mobile_control">
+            <div class="menu">
+              <span class="close"><i class="material-icons">close</i></span>
+            </div>
+            <div class="carousel">
+              <div class="info_back">
+                <h1>Pizza Community</h1>
+                <div class="close-modal-btn" onclick="closemodal()">×</div>
+              </div>
+              <div class="citem active" id="p0">
+                <h1>Pizza Community</h1>
+                <p>
+                  Welcome to the Pizza Community - a global movement dedicated to bringing people together through the universal language of pizza. Our community spans across continents, cultures, and backgrounds, united by a shared mission of spreading joy, hope, and delicious food to those who need it most.
+                </p>
+                <ul>
+                  <li>Global Network: Connecting pizza lovers worldwide</li>
+                  <li>Community Events: Regular meetups and celebrations</li>
+                  <li>Shared Values: Unity, generosity, and compassion</li>
+                </ul>
+                <p> 
+                  <span>Community First</span>
+                  We believe that strong communities are the foundation of a better world. Through our shared love of pizza, we're building bridges between people, fostering understanding, and creating lasting friendships that transcend borders and differences.
+                </p>
+              </div>
+              
+              <div class="citem" id="p1">
+                <h1>Pizza Campaign</h1>
+                <p>
+                  Our Pizza Campaign is more than just a marketing initiative - it's a call to action for everyone who believes in the power of community and the joy of sharing. We're raising awareness about food insecurity while celebrating the cultural significance of pizza around the world.
+                </p>
+                <ul>
+                  <li>Global Awareness: Spreading the message of hope</li>
+                  <li>Cultural Celebration: Honoring pizza traditions</li>
+                  <li>Social Impact: Making a real difference</li>
+                </ul>
+                <p> 
+                  <span>Campaign Goals</span>
+                  Through our comprehensive campaign, we're not just selling pizza - we're selling hope, community, and the belief that together, we can solve some of the world's most pressing challenges, one slice at a time.
+                </p>
+              </div>
+              
+              <div class="citem" id="p2">
+                <h1>Community Events</h1>
+                <p>
+                  Our community events bring people together in celebration of pizza and the values it represents. From local pizza parties to international festivals, these events create opportunities for connection, learning, and shared experiences that strengthen our global community.
+                </p>
+                <ul>
+                  <li>Local Meetups: Building connections in your area</li>
+                  <li>International Festivals: Celebrating global pizza culture</li>
+                  <li>Charity Events: Combining fun with purpose</li>
+                </ul>
+                <p> 
+                  <span>Event Philosophy</span>
+                  Every event we host is designed to create meaningful connections while supporting our mission. Whether it's a small gathering or a major festival, the focus is always on community, compassion, and the joy of sharing.
+                </p>
+              </div>
+              
+              <div class="citem" id="p3">
+                <h1>Pizza Innovation</h1>
+                <p>
+                  Innovation is at the heart of our mission. We're constantly exploring new ways to make pizza more accessible, sustainable, and impactful. From new recipes to delivery methods, we're pushing the boundaries of what pizza can achieve in serving communities.
+                </p>
+                <ul>
+                  <li>Recipe Innovation: Creating new pizza experiences</li>
+                  <li>Technology Integration: Modern delivery solutions</li>
+                  <li>Sustainability Focus: Eco-friendly practices</li>
+                </ul>
+                <p> 
+                  <span>Innovation Mission</span>
+                  Our commitment to innovation goes beyond just making better pizza - we're innovating in how we serve communities, how we connect people, and how we create lasting positive change in the world.
+                </p>
+              </div>
+              
+              <div class="citem" id="p4">
+                <h1>Global Reach</h1>
+                <p>
+                  Our global reach extends far beyond traditional pizza delivery. We're building a worldwide network of pizza enthusiasts, community leaders, and change-makers who are committed to using pizza as a force for good in their local communities.
+                </p>
+                <ul>
+                  <li>Worldwide Network: Connecting across continents</li>
+                  <li>Local Impact: Making change in communities</li>
+                  <li>Cultural Exchange: Sharing traditions globally</li>
+                </ul>
+                <p> 
+                  <span>Global Mission</span>
+                  We're not just expanding our reach - we're building a global family united by the universal language of pizza. Every new location, every new community member, brings us closer to our vision of a world where no one goes hungry.
+                </p>
+              </div>
+              
+              <div class="citem" id="p5">
+                <h1>Pizza Education</h1>
+                <p>
+                  Education is a cornerstone of our community. We believe in sharing knowledge about pizza making, nutrition, and community building. Through workshops, online courses, and hands-on training, we're empowering people to make a difference in their own communities.
+                </p>
+                <ul>
+                  <li>Workshops: Hands-on learning experiences</li>
+                  <li>Online Courses: Accessible education worldwide</li>
+                  <li>Certification: Professional development programs</li>
+                </ul>
+                <p> 
+                  <span>Educational Mission</span>
+                  Our educational programs go beyond pizza making - they teach leadership, community organizing, and sustainable business practices. We're building a new generation of community leaders who understand both traditional values and modern technology.
+                </p>
+              </div>
+              
+              <div class="citem" id="p6">
+                <h1>Future Vision</h1>
+                <p>
+                  Our vision for the future is ambitious but achievable. We see a world where no one goes hungry, where technology enhances human connection, and where pizza serves as a universal symbol of hope and community. This future is being built today, one slice at a time.
+                </p>
+                <ul>
+                  <li>Vision: A world without hunger</li>
+                  <li>Technology: Enhanced human connection</li>
+                  <li>Community: Global pizza family</li>
+                </ul>
+                <p> 
+                  <span>Building Tomorrow</span>
+                  We're not just dreaming of a better future - we're actively building it. Through our innovative combination of traditional values and modern technology, we're creating a sustainable model for community support that can be replicated worldwide.
+                </p>
+              </div>
+              
+              <div class="citem" id="p7">
+                <h1>Community Impact</h1>
+                <p>
+                  Our community impact is measured not just in pizzas served, but in lives changed, connections made, and hope restored. Every slice we share, every event we host, every person we reach contributes to a larger movement of positive change.
+                </p>
+                <ul>
+                  <li>Lives Touched: Real stories of impact</li>
+                  <li>Communities Served: Local and global reach</li>
+                  <li>Sustainable Change: Long-term positive effects</li>
+                </ul>
+                <p> 
+                  <span>Impact Measurement</span>
+                  We track our impact through stories, statistics, and most importantly, through the smiles and connections we create. Every pizza shared is a step toward our vision of a more compassionate, connected world.
+                </p>
+              </div>
+              
+              <div class="citem" id="p8">
+                <h1>Pizza Technology</h1>
+                <p>
+                  Technology is revolutionizing how we serve communities through pizza. From advanced delivery systems to community engagement platforms, we're leveraging cutting-edge technology to make our mission more effective, efficient, and far-reaching than ever before.
+                </p>
+                <ul>
+                  <li>Smart Delivery: AI-powered logistics</li>
+                  <li>Community Apps: Digital connection platforms</li>
+                  <li>Data Analytics: Impact measurement tools</li>
+                </ul>
+                <p> 
+                  <span>Tech Mission</span>
+                  Our technology isn't just about efficiency - it's about connection, accessibility, and making our community support available to more people in more places than ever before.
+                </p>
+              </div>
+            </div>
+            <div class="content">
+              <h1 class="title">Pizza Community</h1>
+              <div class="helmet">
+                <div class="planet_position">
+                  <div class="planet_shadow"></div>
+                  <div class="planet_photo"></div>
+                </div>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="nav">
+                <span id="next" class="action"><i class="material-icons">keyboard_arrow_left</i></span>
+                <span id="prev" class="action"><i class="material-icons">keyboard_arrow_right</i></span>
+              </div>
+              <div class="orbit">
+                <div class="planet_container">
+                  <div class="planet pt earth" id="pl0">
+                    <div class="moon">
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="planet mars" id="pl1">
+                    <div class="moon">
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="planet jupiter" id="pl2"></div>
+                  <div class="planet saturn" id="pl3">
+                    <div class="ring"></div>
+                  </div>
+                  <div class="planet uranus" id="pl4"></div>
+                  <div class="planet neptune" id="pl5"></div>
+                  <div class="planet mercury" id="pl6"></div>
+                  <div class="planet venus" id="pl7"></div>
+                  <div class="planet pluto" id="pl8"></div>
+                </div>
+                <div class="name_container">
+                  <p class="pn">Pizza Community</p>
+                  <p class="more">READ MORE</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #COMMUNITY SECTION
+      -->
+
+      <section class="section community-section bg-black-10" aria-label="community" id="community">
+        <div class="container">
+
+          <p class="section-subtitle label-2 text-center">Join The Movement</p>
+
+          <h2 class="section-title headline-1 text-center">🚀 JOIN THE PIZZA ARMY! 🚀</h2>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="community-card has-before hover:shine">
+
+                <div class="card-banner img-holder" style="--width: 350; --height: 450;">
+                  <img src="./assets/images/event-1.jpg" width="350" height="450" loading="lazy"
+                    alt="Partner with us" class="img-cover">
+                </div>
+
+                <div class="card-content">
+                  <p class="card-subtitle label-2 text-center">Partnership</p>
+
+                  <h3 class="card-title title-2 text-center">
+                    Become a Pizza Partner and earn rewards!
+                  </h3>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="community-card has-before hover:shine">
+
+                <div class="card-banner img-holder" style="--width: 350; --height: 450;">
+                  <img src="./assets/images/event-2.jpg" width="350" height="450" loading="lazy"
+                    alt="Volunteer with us" class="img-cover">
+                </div>
+
+                <div class="card-content">
+                  <p class="card-subtitle label-2 text-center">Volunteer</p>
+
+                  <h3 class="card-title title-2 text-center">
+                    Help spread pizza love worldwide!
+                  </h3>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+         </div>
+       </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer section has-bg-image text-center"
+    style="background-image: url('./assets/images/footer-bg.jpg')">
+    <div class="container">
+
+      <div class="footer-top grid-list">
+
+        <div class="footer-brand has-before has-after">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/pizza/pizzaimages/main_logo.png" width="160" height="50" loading="lazy" alt="pizza coin home">
+          </a>
+
+          <address class="body-4">
+            Global Pizza Community, Feeding the World
+          </address>
+
+          <a href="mailto:info@pizzacoin.com" class="body-4 contact-link">info@pizzacoin.com</a>
+
+          <a href="https://t.me/+PrL-wbxrW39kODBk" class="body-4 contact-link">Join Telegram: @PizzaCoin</a>
+
+          <p class="body-4">
+            Open : 24/7 - Always Serving
+          </p>
+
+          <div class="wrapper">
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="separator"></div>
+          </div>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <a href="#home" class="label-2 footer-link hover-underline">Home</a>
+          </li>
+
+          <li>
+            <a href="#mission" class="label-2 footer-link hover-underline">Mission</a>
+          </li>
+
+          <li>
+            <a href="#gallery" class="label-2 footer-link hover-underline">Gallery</a>
+          </li>
+
+          <li>
+            <a href="#community" class="label-2 footer-link hover-underline">Community</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <a href="https://t.me/+PrL-wbxrW39kODBk" class="label-2 footer-link hover-underline">Telegram</a>
+          </li>
+
+          <li>
+            <a href="https://x.com/Pizza_on__Sol" class="label-2 footer-link hover-underline">Twitter</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">YouTube</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p class="copyright">
+          &copy; 2025 Pizza Coin Community. Made with ❤️ and 🍕! TO THE MOON! 🚀🌕 💎🙌
+        </p>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/pizza-builder.js"></script>
+  <script src="./assets/js/gallery.js"></script>
+  <script src="./assets/js/map-data.js"></script>
+  
+  <!-- 
+    - Leaflet JS for maps
+  -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html> 

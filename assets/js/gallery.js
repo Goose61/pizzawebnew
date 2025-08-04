@@ -1,0 +1,285 @@
+// Enhanced Gallery JavaScript - Based on Anime.js Gallery
+// Pizza-themed gallery with campaign photos and vintage menu
+
+// Initialize HammerJS for touch gestures
+var element = document.getElementById('mobile_control');
+if (element) {
+  var hammertime = new Hammer(element);
+
+  var swiped_top = false;
+
+  hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+  hammertime.on('swipeleft', function(ev) {
+    cmove("prev");
+  });
+  hammertime.on('swiperight', function(ev) {
+    cmove("next");
+  });
+  hammertime.on('swipeup', function(ev) {
+    swiped_top = true;
+    openmodal();
+  });
+  hammertime.on('swipedown', function(ev) {
+    closemodal();
+  });
+}
+
+// Action button clicks
+$(".action").on("click", function(){
+  cmove($(this).attr('id'));
+});
+
+// Initialize title animations
+$('.title').each(function(){
+  $(this).html("Pizza Community".replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+});
+
+// Initial title animation
+anime.timeline({})
+.add({
+  targets: '.title',
+  opacity: [0,1],
+  easing: "easeOutExpo",
+  duration: 100
+})
+.add({
+  targets: '.title .letter',
+  translateX: [40,0],
+  translateZ: 0,
+  opacity: [0,1],
+  easing: "easeOutExpo",
+  duration: 1200,
+  delay: function(el, i) {
+    return 500 + 30 * i;
+  }
+});
+
+var angle = 0;
+var planet_id = 0;
+
+function cmove(dir){
+  var n_planet = 9, next_id;
+  var prev, next;
+  var top = $("#pl"+ planet_id);
+  var orbit = $(".planet_container");
+  
+  top.removeClass("pt");
+  
+  if(planet_id == 0){
+    prev = $("#pl"+ (n_planet-1));
+    next = $("#pl"+ (planet_id+1)%n_planet);
+  }else{
+    prev = $("#pl"+ (planet_id-1));
+    next = $("#pl"+ (planet_id+1)%n_planet);
+  }
+  
+  if(dir == "prev"){
+    next_id = (planet_id + 1) % n_planet;
+    angle -= 45;
+    next.addClass("pt");
+    planet_id++;
+  }else{
+    if(planet_id == 0){
+      next_id = n_planet - 1;
+      planet_id = n_planet - 1;
+    }else{
+      next_id = planet_id-1;
+      --planet_id;
+    }
+    angle += 45;
+    prev.addClass("pt");
+  }
+  
+  $(".active").removeClass("active");
+  $("#p" + planet_id).addClass("active");
+  $(".info_back h1").text(pizza_community[next_id]);
+  
+  if(swiped_top){
+    $('.info_back h1').each(function(){
+      $(this).html(pizza_community[planet_id].replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+    });
+    
+    anime.timeline({})
+    .add({
+      targets: '.info_back h1',
+      opacity: [0,1],
+      easing: "easeOutExpo",
+      duration: 100
+    })
+    .add({
+      targets: '.info_back h1 .letter',
+      translateX: [40,0],
+      translateZ: 0,
+      opacity: [0,1],
+      easing: "easeOutExpo",
+      duration: 1200,
+      delay: function(el, i) {
+        return 500 + 30 * i;
+      }
+    });
+  }
+  
+  $('.title').each(function(){
+    $(this).html(pizza_community[next_id].replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+  });
+  
+  anime.timeline({})
+  .add({
+    targets: '.title .letter',
+    translateX: [40,0],
+    translateZ: 0,
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1200,
+    delay: function(el, i) {
+      return 500 + 30 * i;
+    }
+  });
+  
+  $('.pn').each(function(){
+    $(this).html(pizza_community[next_id].replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+  });
+  
+  anime.timeline({})
+  .add({
+    targets: '.pn .letter',
+    translateX: [40,0],
+    translateZ: 0,
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1200,
+    delay: function(el, i) {
+      return 500 + 30 * i;
+    }
+  });
+  
+  var ani_dir = (dir == "next") ? "0%" : "100%";
+  
+  anime.timeline({})
+  .add({
+    targets: '.planet_photo',
+    opacity: {
+      value: [1,0]
+    },
+    duration: 350,
+    easing: 'easeOutQuad',
+    complete: function(anim){
+      // Update the planet photo background image
+      $(".planet_photo").css("background-image", "url(" + photo_pizza[next_id] +")");
+    }
+  })
+  .add({
+    targets: '.planet_photo',
+    opacity: [0,1],
+    duration: 350,
+    easing: 'easeInQuad'
+  });
+  orbit.css("transform", "rotateZ(" + angle + "deg)");
+}
+
+// Menu functionality
+$("#open_menu").on("click", function(){
+  $(".menu").show();
+});
+
+$(".close").on("click", function(){
+  $(".menu").hide();
+});
+
+$(".more").on("click", function(){
+  swiped_top = true;
+  openmodal();
+});
+
+function openmodal(){
+  // Reset any existing modal state
+  $('.carousel').css('transform', 'translateY(100%)');
+  
+  anime.timeline({})
+  .add({
+    targets: '.carousel',
+    translateY: ["100%", 0],
+    duration: 600,
+    easing: 'easeOutQuad',
+  });
+  
+  // Update the modal content with current planet data
+  $('.info_back h1').each(function(){
+    $(this).html(pizza_community[planet_id].replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+  });
+  
+  // Update the modal content to show the correct item
+  $(".active").removeClass("active");
+  $("#p" + planet_id).addClass("active");
+  
+  // Update the planet photo to show the current planet's image
+  $(".planet_photo").css("background-image", "url(" + photo_pizza[planet_id] +")");
+  
+  // Update the modal content with the correct planet data
+  $(".info_back h1").text(pizza_community[planet_id]);
+  
+  anime.timeline({})
+  .add({
+    targets: '.info_back h1',
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 100
+  })
+  .add({
+    targets: '.info_back h1 .letter',
+    translateX: [40,0],
+    translateZ: 0,
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1200,
+    delay: function(el, i) {
+      return 500 + 30 * i;
+    }
+  });
+  
+  // Set modal as open
+  swiped_top = true;
+}
+
+function closemodal(){
+  anime.timeline({})
+  .add({
+    targets: '.carousel',
+    translateY: [0, "100%"],
+    duration: 600,
+    easing: 'easeOutQuad',
+  });
+  
+  // Reset modal state
+  swiped_top = false;
+}
+
+// Pizza community data arrays
+const photo_pizza = [
+  "./assets/images/pizza/campaign-gallery/photo_1_2025-08-01_12-08-13.jpg",
+  "./assets/images/pizza/campaign-gallery/photo_2_2025-08-01_12-08-13.jpg", 
+  "./assets/images/pizza/campaign-gallery/photo_3_2025-08-01_12-08-13.jpg",
+  "./assets/images/pizza/campaign-gallery/photo_4_2025-08-01_12-08-13.jpg",
+  "./assets/images/pizza/campaign-gallery/photo_5_2025-08-01_12-08-13.jpg",
+  "./assets/images/pizza/campaign-gallery/photo_6_2025-08-01_12-08-13.jpg",
+  "./assets/images/pizza/campaign-gallery/image-11.jpg",
+  "./assets/images/pizza/campaign-gallery/photo_8_2025-08-01_12-08-13.jpg",
+  "./assets/images/pizza/campaign-gallery/photo_9_2025-08-01_12-08-13.jpg"
+];
+
+var pizza_community = [
+  "Pizza Community",
+  "Pizza Campaign", 
+  "Community Events",
+  "Pizza Innovation",
+  "Global Reach",
+  "Pizza Education",
+  "Future Vision",
+  "Community Impact",
+  "Pizza Technology"
+]; 
+
+// Initialize gallery when page loads
+$(document).ready(function() {
+  // Gallery is now manual only
+});
