@@ -500,4 +500,125 @@
         right: auto;
         bottom: auto;
     }
+}
+
+/* Mobile-specific touch improvements */
+@media (max-width: 768px) {
+    .pizza-builder-section {
+        /* Ensure proper touch scrolling */
+        -webkit-overflow-scrolling: touch;
+        overflow: hidden;
+    }
+    
+    /* Improve touch targets */
+    .layer-info {
+        min-height: 60px;
+        touch-action: manipulation;
+    }
+    
+    /* Better mobile spacing */
+    .pizza-builder-section .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .pizza-builder-section .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .pizza-builder-section .section-text {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+}
+
+/* Prevent zoom on input focus for mobile */
+@media (max-width: 768px) {
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* Additional mobile optimizations for pizza builder */
+@media (max-width: 768px) {
+    /* Ensure pizza builder section is properly sized for mobile */
+    .pizza-builder-section {
+        min-height: 100vh;
+        height: auto;
+        padding: 10px;
+    }
+    
+    /* Improve touch interaction for pizza layers */
+    .pizza-layer {
+        touch-action: pan-y;
+    }
+    
+    /* Better mobile layout for layer info */
+    .layer-info {
+        position: relative !important;
+        margin: 10px auto !important;
+        max-width: 90% !important;
+        transform: none !important;
+    }
+    
+    /* Stack layer info vertically on mobile */
+    #crust-info, #sauce-info, #cheese-info, #toppings-info {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        margin: 10px auto !important;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    .pizza-builder-section {
+        padding: 5px;
+    }
+    
+    #pizza-container {
+        width: 180px;
+        height: 180px;
+        margin-top: 20px;
+    }
+    
+    .pizza-layer {
+        width: 180px;
+        height: 180px;
+    }
+    
+    #sauce {
+        width: 160px;
+        height: 160px;
+        top: 10px;
+        left: 10px;
+    }
+    
+    #cheese {
+        width: 140px;
+        height: 140px;
+        top: 20px;
+        left: 20px;
+    }
+    
+    .layer-info {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .layer-info h4 {
+        font-size: 1.2rem;
+    }
+    
+    .layer-info p {
+        font-size: 0.8rem;
+    }
 } 

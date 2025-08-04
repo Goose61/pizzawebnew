@@ -77,7 +77,12 @@ let isInPizzaSection = false;
 let isPizzaBuilt = false;
 let hasCompletedBuildOnce = false;
 
-// Wheel event handler for precise control
+// Touch variables for mobile support
+let touchStartY = 0;
+let touchStartProgress = 0;
+let isTouchDevice = false;
+
+// Wheel event handler for precise control (desktop)
 function handleWheel(e) {
     // If not in pizza section or already built, do nothing
     if (!isInPizzaSection || hasCompletedBuildOnce) return;
@@ -139,8 +144,47 @@ window.addEventListener('scroll', (e) => {
     }
 });
 
+// Touch event handlers for mobile support
+function handleTouchStart(e) {
+    if (!isInPizzaSection || hasCompletedBuildOnce) return;
+    
+    touchStartY = e.touches[0].clientY;
+    touchStartProgress = buildProgress;
+}
+
+function handleTouchMove(e) {
+    if (!isInPizzaSection || hasCompletedBuildOnce) return;
+    
+    e.preventDefault();
+    
+    const touchY = e.touches[0].clientY;
+    const deltaY = touchStartY - touchY;
+    
+    // Adjust build progress based on touch movement
+    buildProgress = touchStartProgress + (deltaY / 200); // Adjust sensitivity
+    buildProgress = clamp(buildProgress, 0, 1);
+    
+    // Check if pizza is fully built
+    isPizzaBuilt = animatePizza(buildProgress);
+    
+    // If fully built, mark as completed
+    if (isPizzaBuilt) {
+        hasCompletedBuildOnce = true;
+    }
+}
+
+// Detect touch device
+function detectTouchDevice() {
+    isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+}
+
 // Prevent default scroll behavior in pizza section
 window.addEventListener('wheel', handleWheel, { passive: false });
 
+// Add touch event listeners for mobile
+window.addEventListener('touchstart', handleTouchStart, { passive: false });
+window.addEventListener('touchmove', handleTouchMove, { passive: false });
+
 // Initialize
+detectTouchDevice();
 animatePizza(0); 

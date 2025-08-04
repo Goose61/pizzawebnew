@@ -506,4 +506,44 @@
   .gallery-container .bottom .orbit .name_container {
     top: 8vh;
   }
+}
+
+/* Mobile-specific touch improvements for gallery */
+@media (max-width: 768px) {
+  .gallery-container {
+    /* Ensure proper touch scrolling */
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Improve touch targets for navigation */
+  .gallery-container .bottom .nav span {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Better mobile spacing for gallery content */
+  .gallery-container .carousel .info_back {
+    padding: 20px;
+  }
+  
+  .gallery-container .carousel .info_back h1 {
+    font-size: 1.5rem;
+  }
+  
+  .gallery-container .carousel .citem h1 {
+    font-size: 1.5rem;
+  }
+  
+  .gallery-container .carousel .citem p {
+    font-size: 0.9rem;
+  }
+  
+  /* Improve close button touch target */
+  .gallery-container .carousel .info_back .close-modal-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
 } 

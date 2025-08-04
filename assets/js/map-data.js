@@ -218,7 +218,7 @@ class PizzaInteractiveMap {
 
     init() {
         if (!document.getElementById(this.containerId)) {
-            console.warn('Map container not found');
+            console.warn('Map container not found - this is normal if map is not initialized yet');
             return;
         }
 
