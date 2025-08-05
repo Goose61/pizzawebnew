@@ -11,25 +11,33 @@
 /* Mobile Logo Optimization */
 @media (max-width: 768px) {
   .header .logo img {
-    width: 120px;
-    height: 38px;
+    width: 140px !important;
+    height: auto !important;
+    max-width: 140px !important;
+    object-fit: contain !important;
   }
   
   .navbar .logo img {
-    width: 120px;
-    height: 38px;
+    width: 140px !important;
+    height: auto !important;
+    max-width: 140px !important;
+    object-fit: contain !important;
   }
 }
 
 @media (max-width: 480px) {
   .header .logo img {
-    width: 100px;
-    height: 32px;
+    width: 120px !important;
+    height: auto !important;
+    max-width: 120px !important;
+    object-fit: contain !important;
   }
   
   .navbar .logo img {
-    width: 100px;
-    height: 32px;
+    width: 120px !important;
+    height: auto !important;
+    max-width: 120px !important;
+    object-fit: contain !important;
   }
 }
 
@@ -1155,16 +1163,18 @@
 /* Badge stamp styling */
 .badge-stamp {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: -20px;
+  right: -20px;
+  width: 200px;
+  height: 200px;
   z-index: 10;
+  transform: rotate(-5deg);
 }
 
 .stamp-image {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   border: 2px solid #d2691e;
   background: white;
   padding: 3px;
@@ -1175,6 +1185,25 @@
 .stamp-image:hover {
   transform: rotate(0deg) scale(1.1);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile responsiveness for stamp */
+@media (max-width: 768px) {
+  .badge-stamp {
+    width: 150px;
+    height: 150px;
+    top: -15px;
+    right: -15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .badge-stamp {
+    width: 120px;
+    height: 120px;
+    top: -10px;
+    right: -10px;
+  }
 }
 
 /* About banner positioning */
@@ -1194,6 +1223,58 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+/* Mobile responsiveness for about section */
+@media (max-width: 768px) {
+  .about .container {
+    padding: 0 20px;
+  }
+  
+  .about-banner {
+    max-width: 100%;
+    margin: 20px auto;
+  }
+  
+  .about-banner img {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .about .section-text {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+  
+  .mission-blocks {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .mission-block, .vision-block {
+    padding: 20px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .about .container {
+    padding: 0 15px;
+  }
+  
+  .about-banner {
+    margin: 15px auto;
+  }
+  
+  .about .section-text {
+    font-size: 1.4rem;
+    padding: 0 5px;
+  }
+  
+  .mission-block, .vision-block {
+    padding: 15px;
+  }
 }
 
 /* Maps section shapes */
@@ -1476,5 +1557,167 @@
   
   .partners-track {
     animation-duration: 15s;
+  }
+}
+
+/* Exchanges Section Styles */
+.exchanges-section {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffe4b3 50%, #ffdab9 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.exchanges-section .section-subtitle {
+  color: #d2691e;
+  font-weight: var(--weight-bold);
+}
+
+.exchanges-section .section-title {
+  color: #8B4513;
+  margin-bottom: 20px;
+}
+
+.exchanges-section .section-text {
+  color: #654321;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+/* Exchanges Carousel */
+.exchanges-carousel {
+  overflow: hidden;
+  position: relative;
+  margin: 40px 0;
+}
+
+.exchanges-track {
+  display: flex;
+  animation: scroll 25s linear infinite;
+  width: fit-content;
+}
+
+.exchange-item {
+  flex-shrink: 0;
+  margin: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #d2691e, #cd853f);
+  border: 2px solid rgba(210, 105, 30, 0.3);
+  border-radius: 15px;
+  padding: 15px;
+  min-width: 300px;
+  height: 180px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.exchange-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgba(210, 105, 30, 0.6);
+}
+
+.exchange-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.exchange-logo {
+  max-width: 95%;
+  max-height: 95%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.exchange-item:hover .exchange-logo {
+  transform: scale(1.15);
+}
+
+/* Exchanges section shapes */
+.exchanges-section .shape {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.exchanges-section .shape-1 {
+  top: 10%;
+  left: 5%;
+  width: 140px;
+  height: 140px;
+}
+
+.exchanges-section .shape-2 {
+  bottom: 15%;
+  right: 5%;
+  width: 120px;
+  height: 120px;
+}
+
+/* Responsive adjustments for exchanges section */
+@media (max-width: 1200px) {
+  .exchanges-section .shape {
+    display: none;
+  }
+  
+  .exchange-item {
+    min-width: 250px;
+    height: 150px;
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .exchanges-section {
+    padding: 60px 0;
+  }
+  
+  .exchanges-section .section-text {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+  
+  .exchange-item {
+    min-width: 200px;
+    height: 120px;
+    margin: 0 15px;
+    padding: 15px;
+  }
+  
+  .exchanges-track {
+    animation-duration: 18s;
+  }
+}
+
+@media (max-width: 480px) {
+  .exchanges-section {
+    padding: 40px 0;
+  }
+  
+  .exchanges-section .section-text {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+  }
+  
+  .exchange-item {
+    min-width: 160px;
+    height: 100px;
+    margin: 0 10px;
+    padding: 10px;
+  }
+  
+  .exchanges-track {
+    animation-duration: 12s;
   }
 } 

@@ -6,115 +6,108 @@ class PizzaMapData {
         this.defaultLocations = [
             {
                 id: 1,
-                name: "Mumbai Pizza Hub",
-                city: "Mumbai",
-                country: "India",
-                lat: 19.0760,
-                lng: 72.8777,
+                name: "Tastee Pizza",
+                city: "Hawthorne",
+                country: "USA",
+                state: "NJ",
+                lat: 40.9495,
+                lng: -74.1535,
                 status: "active",
-                meals_served: 2500,
+                meals_served: 2800,
                 partners: 5,
-                description: "Serving families in Mumbai slums with fresh pizza and hope",
-                contact: "mumbai@pizzacommunity.org",
-                established: "2024-01-15"
+                description: "Family-owned pizzeria serving the Hawthorne community since 1982",
+                contact: "tastee@pizzacommunity.org",
+                established: "2023-10-15"
             },
             {
                 id: 2,
-                name: "Chicago Food Network",
-                city: "Chicago",
+                name: "ROCK N GRILL",
+                city: "Glen Rock",
                 country: "USA",
-                lat: 41.8781,
-                lng: -87.6298,
+                state: "NJ",
+                lat: 40.9629,
+                lng: -74.1329,
                 status: "active",
                 meals_served: 3200,
                 partners: 8,
-                description: "Downtown Chicago location serving the homeless community",
-                contact: "chicago@pizzacommunity.org",
+                description: "Local favorite serving Glen Rock and surrounding areas",
+                contact: "rockngrill@pizzacommunity.org",
                 established: "2023-11-20"
             },
             {
                 id: 3,
-                name: "Lagos Community Kitchen",
-                city: "Lagos",
-                country: "Nigeria",
-                lat: 6.5244,
-                lng: 3.3792,
+                name: "Uncle Louie's",
+                city: "Franklin Lakes",
+                country: "USA",
+                state: "NJ",
+                lat: 41.0168,
+                lng: -74.2057,
                 status: "active",
-                meals_served: 1800,
-                partners: 3,
-                description: "Supporting local families in Lagos with nutritious meals",
-                contact: "lagos@pizzacommunity.org",
-                established: "2024-02-10"
+                meals_served: 2400,
+                partners: 6,
+                description: "Community-focused pizzeria in Franklin Lakes",
+                contact: "unclelouies@pizzacommunity.org",
+                established: "2023-09-10"
             },
             {
                 id: 4,
-                name: "São Paulo Initiative",
-                city: "São Paulo",
-                country: "Brazil",
-                lat: -23.5505,
-                lng: -46.6333,
-                status: "progress",
-                meals_served: 450,
-                partners: 2,
-                description: "New partnership launching in São Paulo favelas",
-                contact: "saopaulo@pizzacommunity.org",
-                established: "2024-03-01"
+                name: "Haledon Pizza",
+                city: "Haledon",
+                country: "USA",
+                state: "NJ",
+                lat: 40.9354,
+                lng: -74.1863,
+                status: "active",
+                meals_served: 1900,
+                partners: 4,
+                description: "Serving the Haledon community with fresh pizza daily",
+                contact: "haledon@pizzacommunity.org",
+                established: "2023-08-25"
             },
             {
                 id: 5,
-                name: "Bangkok Street Food",
-                city: "Bangkok",
-                country: "Thailand",
-                lat: 13.7563,
-                lng: 100.5018,
-                status: "active",
-                meals_served: 1200,
-                partners: 4,
-                description: "Working with local street vendors to feed communities",
-                contact: "bangkok@pizzacommunity.org",
-                established: "2024-01-30"
-            },
-            {
-                id: 6,
-                name: "New York Outreach",
-                city: "New York",
+                name: "JJ's Pizza",
+                city: "Wyandotte",
                 country: "USA",
-                lat: 40.7128,
-                lng: -74.0060,
+                state: "MI",
+                lat: 42.2142,
+                lng: -83.1499,
                 status: "active",
-                meals_served: 2800,
-                partners: 6,
-                description: "Brooklyn and Manhattan locations serving diverse communities",
-                contact: "newyork@pizzacommunity.org",
+                meals_served: 3600,
+                partners: 9,
+                description: "Michigan's favorite since 1974, serving Wyandotte and beyond",
+                contact: "jjs@pizzacommunity.org",
                 established: "2023-12-05"
             },
             {
-                id: 7,
-                name: "London Community Hub",
-                city: "London",
-                country: "UK",
-                lat: 51.5074,
-                lng: -0.1278,
-                status: "planned",
-                meals_served: 0,
-                partners: 0,
-                description: "Planned expansion to serve London's homeless population",
-                contact: "london@pizzacommunity.org",
-                established: null
+                id: 6,
+                name: "Coastal Smash",
+                city: "Bradenton",
+                country: "USA",
+                state: "FL",
+                lat: 27.4989,
+                lng: -82.5748,
+                status: "active",
+                meals_served: 4100,
+                partners: 12,
+                description: "Florida's coastal pizza destination in Bradenton",
+                contact: "coastalsmash@pizzacommunity.org",
+                established: "2023-07-15"
             },
             {
-                id: 8,
-                name: "Sydney Coastal Relief",
-                city: "Sydney",
-                country: "Australia",
-                lat: -33.8688,
-                lng: 151.2093,
-                status: "planned",
-                meals_served: 0,
-                partners: 0,
-                description: "Future location targeting indigenous communities",
-                contact: "sydney@pizzacommunity.org",
-                established: null
+                id: 7,
+                name: "Domino's Pizza",
+                city: "Chicago",
+                country: "USA",
+                state: "IL",
+                lat: 41.8781,
+                lng: -87.6298,
+                status: "active",
+                meals_served: 5200,
+                partners: 15,
+                description: "Chicago's premier Domino's location serving the downtown area",
+                contact: "chicago@pizzacommunity.org",
+                established: "2023-06-20"
             }
         ];
         
@@ -122,8 +115,12 @@ class PizzaMapData {
     }
 
     initializeData() {
+        // Clear any existing cached data to force refresh with new locations
+        localStorage.removeItem(this.storageKey);
+        
         if (!localStorage.getItem(this.storageKey)) {
             this.saveLocations(this.defaultLocations);
+            console.log('Initialized map with new default locations:', this.defaultLocations);
         } else {
             // Migrate any locations with old 'in-progress' status to 'progress'
             this.migrateStatusValues();
@@ -201,6 +198,14 @@ class PizzaMapData {
             totalMeals: locations.reduce((sum, l) => sum + (l.meals_served || 0), 0),
             totalPartners: locations.reduce((sum, l) => sum + (l.partners || 0), 0)
         };
+    }
+
+    // Add method to force refresh map data
+    forceRefresh() {
+        localStorage.removeItem(this.storageKey);
+        this.saveLocations(this.defaultLocations);
+        console.log('Forced refresh of map data with new locations');
+        return this.getLocations();
     }
 }
 
@@ -371,6 +376,20 @@ class PizzaInteractiveMap {
 // Initialize map when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('world-map')) {
+        // Force refresh the map data to ensure new locations are loaded
+        if (window.pizzaMapData) {
+            window.pizzaMapData.forceRefresh();
+        }
         window.pizzaMap = new PizzaInteractiveMap('world-map');
+        
+        // Update stats display
+        setTimeout(() => {
+            const stats = window.pizzaMapData.getTotalStats();
+            const totalLocationsEl = document.getElementById('total-locations');
+            const totalPartnersEl = document.getElementById('total-partners');
+            
+            if (totalLocationsEl) totalLocationsEl.textContent = stats.totalLocations;
+            if (totalPartnersEl) totalPartnersEl.textContent = stats.totalPartners;
+        }, 1000);
     }
 }); 
