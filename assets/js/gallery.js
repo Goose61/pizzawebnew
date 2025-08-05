@@ -1,21 +1,21 @@
 // Enhanced Gallery JavaScript - Based on Anime.js Gallery
 // Crypto and $PIZZA token focused gallery
 
-// Initialize HammerJS for touch gestures
+// Initialize HammerJS for touch gestures - Only for modal close
 var element = document.getElementById('mobile_control');
 if (element) {
   var hammertime = new Hammer(element);
 
   var swiped_top = false;
 
-  hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+  // Only allow horizontal swipes for navigation and down swipe for closing modal
+  hammertime.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL | Hammer.DIRECTION_DOWN });
   hammertime.on('swipeleft', function(ev) {
     cmove("prev");
   });
   hammertime.on('swiperight', function(ev) {
     cmove("next");
   });
-  // Removed swipe up gesture to prevent accidental modal opening
   hammertime.on('swipedown', function(ev) {
     closemodal();
   });

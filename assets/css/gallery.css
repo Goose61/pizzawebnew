@@ -47,6 +47,43 @@
   opacity: 0;
 }
 
+/* Mobile modal header fixes */
+@media (max-width: 768px) {
+  .gallery-container .carousel .info_back h1 {
+    font-size: 2.5vh;
+    letter-spacing: 8px;
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .gallery-container .carousel .citem h1 {
+    font-size: 2.5vh;
+    letter-spacing: 8px;
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-container .carousel .info_back h1 {
+    font-size: 2vh;
+    letter-spacing: 5px;
+    line-height: 1.1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .gallery-container .carousel .citem h1 {
+    font-size: 2vh;
+    letter-spacing: 5px;
+    line-height: 1.1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
 .gallery-container .carousel .info_back h1 .letter {
   display: inline-block;
   line-height: 1em;
