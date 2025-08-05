@@ -1,10 +1,10 @@
 // Enhanced Gallery JavaScript - Based on Anime.js Gallery
 // Crypto and $PIZZA token focused gallery
 
-// Initialize HammerJS for touch gestures - Only for modal close
-var element = document.getElementById('mobile_control');
-if (element) {
-  var hammertime = new Hammer(element);
+// Initialize HammerJS for touch gestures - Only on orbital ring
+var orbitElement = document.querySelector('.gallery-container .bottom .orbit');
+if (orbitElement) {
+  var hammertime = new Hammer(orbitElement);
 
   var swiped_top = false;
 

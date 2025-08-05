@@ -559,13 +559,14 @@
     pointer-events: auto;
   }
   
-  /* Ensure the orbital ring doesn't block scrolling */
+  /* Only the orbital ring should capture touch events */
   .gallery-container .bottom .orbit {
-    pointer-events: none;
+    pointer-events: auto;
+    touch-action: pan-x;
   }
   
   .gallery-container .bottom .orbit .planet_container {
-    pointer-events: none;
+    pointer-events: auto;
   }
   
   .gallery-container .bottom .orbit .planet_container .planet {
@@ -573,6 +574,19 @@
   }
   
   .gallery-container .bottom .orbit .name_container {
+    pointer-events: auto;
+  }
+  
+  /* Ensure other gallery areas don't interfere with page scroll */
+  .gallery-container .content {
+    pointer-events: none;
+  }
+  
+  .gallery-container .content .helmet {
+    pointer-events: none;
+  }
+  
+  .gallery-container .bottom .nav {
     pointer-events: auto;
   }
   
