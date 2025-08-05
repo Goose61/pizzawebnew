@@ -16,6 +16,9 @@
   margin: auto;
   z-index: 100;
   max-width: 1200px;
+  /* Ensure gallery doesn't interfere with page scrolling */
+  pointer-events: auto;
+  touch-action: pan-y;
 }
 
 .gallery-container .carousel {
@@ -550,6 +553,27 @@
   .gallery-container {
     /* Ensure proper touch scrolling */
     -webkit-overflow-scrolling: touch;
+    /* Allow page scrolling */
+    touch-action: pan-y;
+    /* Prevent gallery from blocking page scroll */
+    pointer-events: auto;
+  }
+  
+  /* Ensure the orbital ring doesn't block scrolling */
+  .gallery-container .bottom .orbit {
+    pointer-events: none;
+  }
+  
+  .gallery-container .bottom .orbit .planet_container {
+    pointer-events: none;
+  }
+  
+  .gallery-container .bottom .orbit .planet_container .planet {
+    pointer-events: auto;
+  }
+  
+  .gallery-container .bottom .orbit .name_container {
+    pointer-events: auto;
   }
   
   /* Improve touch targets for navigation */
