@@ -1836,3 +1836,361 @@
     animation-duration: 12s;
   }
 } 
+
+/* Video Section Styles */
+.video-section {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffe4b3 50%, #ffdab9 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.video-section .section-subtitle {
+  color: #d2691e;
+  font-weight: var(--weight-bold);
+}
+
+.video-section .section-title {
+  color: #8B4513;
+  margin-bottom: 20px;
+}
+
+.video-section .section-text {
+  color: #654321;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+/* Video Carousel */
+.video-carousel {
+  overflow: hidden;
+  position: relative;
+  margin: 40px 0;
+  min-height: 300px;
+  z-index: 1;
+  isolation: isolate;
+  pointer-events: auto;
+}
+
+/* Ensure no overlays block the buttons */
+.video-carousel::before,
+.video-carousel::after {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+.video-track {
+  display: flex;
+  width: fit-content;
+  transition: transform 0.5s ease;
+  transform: translateX(0);
+  /* Debug: add a border to see the track */
+  border: 2px solid transparent;
+}
+
+/* Debug: highlight video items */
+.video-item {
+  border: 1px solid rgba(210, 105, 30, 0.3);
+}
+
+/* Add visual indicator for current position */
+.video-item.active {
+  border: 2px solid rgba(210, 105, 30, 1);
+  box-shadow: 0 0 10px rgba(210, 105, 30, 0.5);
+}
+
+.video-item {
+  flex-shrink: 0;
+  margin: 0 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(210, 105, 30, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  min-width: 400px;
+  max-width: 400px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.video-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgba(210, 105, 30, 0.5);
+}
+
+/* Video Navigation Buttons */
+.video-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(210, 105, 30, 0.9);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer !important;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  font-size: 24px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: auto;
+  isolation: isolate;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  min-height: 44px;
+  min-width: 44px;
+  /* Ensure button is clickable on all devices */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.video-nav-btn:hover {
+  background: rgba(210, 105, 30, 1);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 12px rgba(210, 105, 30, 0.4);
+}
+
+.video-nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.video-nav-btn.prev {
+  left: 10px;
+  position: absolute;
+}
+
+.video-nav-btn.next {
+  right: 10px;
+  position: absolute;
+}
+
+.video-nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.video-nav-btn:disabled:hover {
+  transform: translateY(-50%);
+  background: rgba(210, 105, 30, 0.9);
+  box-shadow: none;
+}
+
+/* Focus states for accessibility */
+.video-nav-btn:focus {
+  outline: 2px solid rgba(210, 105, 30, 1);
+  outline-offset: 2px;
+}
+
+.video-nav-btn:focus-visible {
+  outline: 2px solid rgba(210, 105, 30, 1);
+  outline-offset: 2px;
+}
+
+/* Ensure buttons are always on top */
+.video-nav-btn {
+  position: absolute !important;
+  z-index: 9999 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+/* Desktop-specific fixes */
+@media (min-width: 769px) {
+  .video-nav-btn {
+    min-width: 50px;
+    min-height: 50px;
+    cursor: pointer !important;
+  }
+  
+  .video-nav-btn:hover {
+    background: rgba(210, 105, 30, 1) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+  }
+}
+
+/* Ensure buttons are clickable on mobile */
+@media (max-width: 768px) {
+  .video-nav-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    min-height: 44px;
+    min-width: 44px;
+    -webkit-tap-highlight-color: rgba(210, 105, 30, 0.3);
+  }
+  
+  .video-nav-btn.prev {
+    left: 5px;
+    position: absolute;
+  }
+  
+  .video-nav-btn.next {
+    right: 5px;
+    position: absolute;
+  }
+  
+  /* Ensure no other elements interfere */
+  .video-carousel * {
+    pointer-events: auto;
+  }
+  
+  .video-carousel .video-track {
+    pointer-events: none;
+  }
+  
+  .video-carousel .video-item {
+    pointer-events: none;
+  }
+  
+  .video-carousel .video-container {
+    pointer-events: none;
+  }
+  
+  .video-carousel .video-container iframe {
+    pointer-events: none;
+  }
+}
+
+.video-container {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 225px;
+  border: none;
+  border-radius: 10px;
+}
+
+.video-content {
+  text-align: center;
+}
+
+.video-title {
+  color: #8B4513;
+  font-size: 1.6rem;
+  font-weight: var(--weight-bold);
+  margin-bottom: 10px;
+}
+
+.video-description {
+  color: #654321;
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+/* Video section shapes */
+.video-section .shape {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.video-section .shape-1 {
+  top: 10%;
+  left: 5%;
+  width: 140px;
+  height: 140px;
+}
+
+.video-section .shape-2 {
+  bottom: 15%;
+  right: 5%;
+  width: 120px;
+  height: 120px;
+}
+
+/* Responsive adjustments for video section */
+@media (max-width: 1200px) {
+  .video-section .shape {
+    display: none;
+  }
+  
+  .video-item {
+    min-width: 350px;
+    max-width: 350px;
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-section {
+    padding: 60px 0;
+  }
+  
+  .video-section .section-text {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+  
+  .video-item {
+    min-width: 300px;
+    max-width: 300px;
+    margin: 0 15px;
+    padding: 15px;
+  }
+  
+  .video-container iframe {
+    height: 180px;
+  }
+  
+  .video-title {
+    font-size: 1.4rem;
+  }
+  
+  .video-description {
+    font-size: 1.2rem;
+  }
+  
+  .video-track {
+    animation-duration: 30s;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-section {
+    padding: 40px 0;
+  }
+  
+  .video-section .section-text {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+  }
+  
+  .video-item {
+    min-width: 280px;
+    max-width: 280px;
+    margin: 0 10px;
+    padding: 12px;
+  }
+  
+  .video-container iframe {
+    height: 160px;
+  }
+  
+  .video-title {
+    font-size: 1.3rem;
+  }
+  
+  .video-description {
+    font-size: 1.1rem;
+  }
+  
+  .video-track {
+    animation-duration: 25s;
+  }
+} 
