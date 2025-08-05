@@ -15,10 +15,7 @@ if (element) {
   hammertime.on('swiperight', function(ev) {
     cmove("next");
   });
-  hammertime.on('swipeup', function(ev) {
-    swiped_top = true;
-    openmodal();
-  });
+  // Removed swipe up gesture to prevent accidental modal opening
   hammertime.on('swipedown', function(ev) {
     closemodal();
   });

@@ -12,24 +12,28 @@
 @media (max-width: 768px) {
   .header .logo img {
     width: 120px;
-    height: 38px;
+    height: auto;
+    max-height: 50px;
   }
   
   .navbar .logo img {
     width: 120px;
-    height: 38px;
+    height: auto;
+    max-height: 50px;
   }
 }
 
 @media (max-width: 480px) {
   .header .logo img {
     width: 100px;
-    height: 32px;
+    height: auto;
+    max-height: 40px;
   }
   
   .navbar .logo img {
     width: 100px;
-    height: 32px;
+    height: auto;
+    max-height: 40px;
   }
 }
 
