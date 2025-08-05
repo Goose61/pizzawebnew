@@ -11,29 +11,25 @@
 /* Mobile Logo Optimization */
 @media (max-width: 768px) {
   .header .logo img {
-    width: 160px;
-    height: 50px;
-    object-fit: contain;
+    width: 120px;
+    height: 38px;
   }
   
   .navbar .logo img {
-    width: 160px;
-    height: 50px;
-    object-fit: contain;
+    width: 120px;
+    height: 38px;
   }
 }
 
 @media (max-width: 480px) {
   .header .logo img {
-    width: 120px;
-    height: 38px;
-    object-fit: contain;
+    width: 100px;
+    height: 32px;
   }
   
   .navbar .logo img {
-    width: 120px;
-    height: 38px;
-    object-fit: contain;
+    width: 100px;
+    height: 32px;
   }
 }
 
@@ -81,19 +77,6 @@
 
 .social-btn ion-icon {
   font-size: 1.8rem;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/* Ensure Telegram icon displays properly */
-.telegram-btn ion-icon {
-  color: white;
-  font-size: 2rem;
-}
-
-.x-btn ion-icon {
-  color: white;
-  font-size: 2rem;
 }
 
 /* Marketing Section Styles */
@@ -1172,48 +1155,26 @@
 /* Badge stamp styling */
 .badge-stamp {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
   z-index: 10;
 }
 
 .stamp-image {
-  width: 165px !important;
-  height: 165px !important;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  border: 4px solid #d2691e;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid #d2691e;
   background: white;
-  padding: 8px;
+  padding: 3px;
   transform: rotate(-5deg);
   transition: all 0.3s ease;
-  object-fit: cover;
-}
-
-/* Mobile stamp size reduction */
-@media (max-width: 768px) {
-  .stamp-image {
-    width: 82px !important;
-    height: 82px !important;
-    padding: 4px;
-    border: 2px solid #d2691e;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-  }
-}
-
-@media (max-width: 480px) {
-  .stamp-image {
-    width: 82px !important;
-    height: 82px !important;
-    padding: 4px;
-    border: 2px solid #d2691e;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-  }
 }
 
 .stamp-image:hover {
   transform: rotate(0deg) scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* About banner positioning */
@@ -1231,9 +1192,8 @@
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
-  display: block;
 }
 
 /* Maps section shapes */
@@ -1304,4 +1264,175 @@
   right: 5%;
   width: 110px;
   height: 110px;
+}
+
+/* Partners Section Styles */
+.partners-section {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffe4b3 50%, #ffdab9 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.partners-section .section-subtitle {
+  color: #d2691e;
+  font-weight: var(--weight-bold);
+}
+
+.partners-section .section-title {
+  color: #8B4513;
+  margin-bottom: 20px;
+}
+
+.partners-section .section-text {
+  color: #654321;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+/* Partners Carousel */
+.partners-carousel {
+  overflow: hidden;
+  position: relative;
+  margin: 40px 0;
+}
+
+.partners-track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  width: fit-content;
+}
+
+.partner-item {
+  flex-shrink: 0;
+  margin: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #d2691e, #cd853f);
+  border: 2px solid rgba(210, 105, 30, 0.3);
+  border-radius: 15px;
+  padding: 15px;
+  min-width: 300px;
+  height: 180px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.partner-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgba(210, 105, 30, 0.6);
+}
+
+.partner-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.partner-logo {
+  max-width: 95%;
+  max-height: 95%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.partner-item:hover .partner-logo {
+  transform: scale(1.15);
+}
+
+/* Partners section shapes */
+.partners-section .shape {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.partners-section .shape-1 {
+  top: 10%;
+  left: 5%;
+  width: 140px;
+  height: 140px;
+}
+
+.partners-section .shape-2 {
+  bottom: 15%;
+  right: 5%;
+  width: 120px;
+  height: 120px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive adjustments for partners section */
+@media (max-width: 1200px) {
+  .partners-section .shape {
+    display: none;
+  }
+  
+  .partner-item {
+    min-width: 220px;
+    height: 130px;
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-section {
+    padding: 60px 0;
+  }
+  
+  .partners-section .section-text {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+  
+  .partner-item {
+    min-width: 180px;
+    height: 100px;
+    margin: 0 15px;
+    padding: 15px;
+  }
+  
+  .partners-track {
+    animation-duration: 20s;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-section {
+    padding: 40px 0;
+  }
+  
+  .partners-section .section-text {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+  }
+  
+  .partner-item {
+    min-width: 150px;
+    height: 85px;
+    margin: 0 10px;
+    padding: 10px;
+  }
+  
+  .partners-track {
+    animation-duration: 15s;
+  }
 } 

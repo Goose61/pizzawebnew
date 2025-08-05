@@ -184,9 +184,6 @@ body {
   line-height: var(--lineHeight-5);
   overflow: hidden;
   height: 300vh;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body.loaded { overflow: overlay; }
@@ -243,28 +240,16 @@ body.nav-active { overflow: hidden; }
 .body-1 {
   font-size: var(--fontSize-body-1);
   line-height: var(--lineHeight-6);
-  font-weight: var(--weight-regular);
-  letter-spacing: 0.02em;
 }
 
 .body-2 {
   font-size: var(--fontSize-body-2);
   line-height: var(--lineHeight-4);
-  font-weight: var(--weight-regular);
-  letter-spacing: 0.01em;
 }
 
-.body-3 { 
-  font-size: var(--fontSize-body-3);
-  font-weight: var(--weight-regular);
-  letter-spacing: 0.01em;
-}
+.body-3 { font-size: var(--fontSize-body-3); }
 
-.body-4 { 
-  font-size: var(--fontSize-body-4);
-  font-weight: var(--weight-regular);
-  letter-spacing: 0.01em;
-}
+.body-4 { font-size: var(--fontSize-body-4); }
 
 .label-1 { font-size: var(--fontSize-label-1); }
 
@@ -596,128 +581,6 @@ body.nav-active { overflow: hidden; }
 @keyframes loadingText {
   0% { background-position: 100%; }
   100% { background-position: 0%; }
-}
-
-/* Enhanced Mobile Preloader Optimization */
-@media (max-width: 768px) {
-  .preload {
-    background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-
-  .preload .circle {
-    width: 80px;
-    height: 80px;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-top: 4px solid #fff;
-    margin-bottom: 20px;
-  }
-
-  .preload .text {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    max-width: 90vw;
-    word-wrap: break-word;
-    line-height: 1.4;
-    background: none;
-    -webkit-text-fill-color: #fff;
-    -webkit-text-stroke: none;
-    letter-spacing: 4px;
-    padding: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .preload .circle {
-    width: 60px;
-    height: 60px;
-    border-width: 3px;
-  }
-
-  .preload .text {
-    font-size: 1rem;
-    padding: 0 20px;
-    letter-spacing: 2px;
-  }
-}
-
-/* Additional Mobile Optimizations for Vision Section */
-@media (max-width: 768px) {
-  .about .container {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .about-content {
-    order: 1;
-    text-align: center;
-  }
-
-  .about-banner {
-    order: 2;
-  }
-
-  .mission-blocks {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .mission-block, .vision-block {
-    padding: 20px;
-    overflow: visible;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .mission-block h3, .vision-block h3 {
-    font-size: 1.2rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
-  }
-
-  .mission-block p, .vision-block p {
-    font-size: 0.9rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
-  }
-
-  .contact-number {
-    font-size: 1rem !important;
-    word-break: break-all;
-    max-width: 100%;
-    overflow-wrap: break-word;
-  }
-}
-
-@media (max-width: 480px) {
-  .about {
-    padding-block: 60px 40px;
-  }
-
-  .mission-block, .vision-block {
-    padding: 15px;
-  }
-
-  .mission-block h3, .vision-block h3 {
-    font-size: 1.1rem;
-  }
-
-  .mission-block p, .vision-block p {
-    font-size: 0.85rem;
-  }
-
-  .contact-number {
-    font-size: 0.9rem !important;
-  }
 }
 
 
@@ -1135,6 +998,7 @@ body.nav-active { overflow: hidden; }
 
 .about .abs-img-2::before {
   inset: 0;
+  background-image: url('../images/badge-2-bg.png');
   background-repeat: no-repeat;
   background-size: contain;
   animation: rotate360 15s linear infinite;
@@ -1511,7 +1375,7 @@ textarea.input-field {
 }
 
 .footer-link {
-  color: var(--smoky-black-1);
+  color: var(--quick-silver);
   font-weight: var(--weight-bold);
   text-transform: uppercase;
   letter-spacing: var(--letterSpacing-4);
