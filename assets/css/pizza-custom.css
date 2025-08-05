@@ -1229,32 +1229,61 @@
 @media (max-width: 768px) {
   .about .container {
     padding: 0 20px;
+    max-width: 100%;
+    overflow: hidden;
   }
   
-  .about-banner {
-    max-width: 100%;
-    margin: 20px auto;
-  }
-  
-  .about-banner img {
-    width: 100%;
-    max-width: 100%;
+  .about .section-title {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
   }
   
   .about .section-text {
     font-size: 1.6rem;
     line-height: 1.5;
     padding: 0 10px;
+    margin-bottom: 30px;
+  }
+  
+  .about-banner {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+  
+  .about-banner img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
   
   .mission-blocks {
     flex-direction: column;
     gap: 20px;
+    padding: 0 10px;
   }
   
   .mission-block, .vision-block {
     padding: 20px;
     margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .mission-block h3, .vision-block h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .mission-block p, .vision-block p {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+  
+  .about .contact-number {
+    font-size: 1.8rem;
+    word-break: break-all;
   }
 }
 
@@ -1263,17 +1292,82 @@
     padding: 0 15px;
   }
   
-  .about-banner {
-    margin: 15px auto;
+  .about .section-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
   }
   
   .about .section-text {
     font-size: 1.4rem;
     padding: 0 5px;
+    margin-bottom: 25px;
+  }
+  
+  .about-banner {
+    margin: 15px auto;
+    padding: 0 5px;
+  }
+  
+  .mission-blocks {
+    padding: 0 5px;
+    gap: 15px;
   }
   
   .mission-block, .vision-block {
     padding: 15px;
+  }
+  
+  .mission-block h3, .vision-block h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  
+  .mission-block p, .vision-block p {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+  
+  .about .contact-number {
+    font-size: 1.6rem;
+  }
+  
+  .about .contact-label {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .about .container {
+    padding: 0 10px;
+  }
+  
+  .about .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .about .section-text {
+    font-size: 1.3rem;
+    padding: 0;
+  }
+  
+  .about-banner {
+    padding: 0;
+  }
+  
+  .mission-blocks {
+    padding: 0;
+  }
+  
+  .mission-block, .vision-block {
+    padding: 12px;
+  }
+  
+  .mission-block h3, .vision-block h3 {
+    font-size: 1.5rem;
+  }
+  
+  .mission-block p, .vision-block p {
+    font-size: 1.2rem;
   }
 }
 
