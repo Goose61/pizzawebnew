@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Content Security Policy - Optimized for Google Drive and external resources -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://code.jquery.com https://unpkg.com https://cdn.jsdelivr.net https://drive.google.com https://clients6.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://drive.google.com; frame-src 'self' https://drive.google.com https://docs.google.com https://accounts.google.com https://clients6.google.com https://*.google.com; connect-src 'self' https: wss: data: https://*.google.com https://*.googleapis.com https://ogads-pa.clients6.google.com https://unpkg.com; img-src 'self' data: https: blob: https://*.google.com https://unpkg.com; font-src 'self' data: https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com https://unpkg.com;">
 
   <!-- 
     - primary meta tags
@@ -58,6 +61,32 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
   <!-- 
+    - Video container aspect ratio - 1:1 square ratio
+  -->
+  <style>
+    .video-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1; /* Perfect 1:1 square ratio */
+      overflow: hidden;
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
+      border: none;
+    }
+    
+    .video-item {
+      width: 100%;
+      flex: 0 0 auto;
+    }
+  </style>
+
+  <!-- 
     - preload images
   -->
   <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg">
@@ -72,7 +101,7 @@
     - #PRELOADER
   -->
 
-  <div class="preload" data-preaload>
+  <div class="preload" data-preload>
     <div class="circle"></div>
     <p class="text">🍕 PIZZA COIN 🚀</p>
   </div>
@@ -203,7 +232,7 @@
           <!-- Social Buttons in Hamburger Menu -->
           <div class="social-buttons">
             <a href="https://t.me/+PrL-wbxrW39kODBk" class="social-btn telegram-btn">
-              <ion-icon name="logo-telegram"></ion-icon>
+              <ion-icon name="paper-plane-outline"></ion-icon>
               <span>Join Telegram</span>
             </a>
             
@@ -417,7 +446,7 @@
           </div>
 
           <div class="marketing-cta">
-            <a href="coming-soon.html" class="btn btn-primary">
+            <a href="./platform-index.html" class="btn btn-primary" target="_self">
               <span class="text text-1">Register Now</span>
               <span class="text text-2" aria-hidden="true">Register Now</span>
             </a>
@@ -759,93 +788,56 @@
             <div class="video-track" id="video-track">
               <div class="video-item">
                 <div class="video-container">
-                  <iframe src="https://drive.google.com/file/d/1Tyl-TBUuO44MpZAS953QFcMWfJgkj2ZA/preview" 
+                  <iframe data-src="https://drive.google.com/file/d/1Tyl-TBUuO44MpZAS953QFcMWfJgkj2ZA/preview" 
                           frameborder="0" 
-                          allow="autoplay"
-                          allowfullscreen>
+                          allow="autoplay; fullscreen"
+                          allowfullscreen
+                          loading="lazy"
+                          sandbox="allow-same-origin allow-scripts"
+                          class="lazy-iframe">
                   </iframe>
                 </div>
               </div>
               
               <div class="video-item">
                 <div class="video-container">
-                  <iframe src="https://drive.google.com/file/d/1iQ-aVlhXy_PehKr4V_2gbp3W3ZF6WsVn/preview" 
+                  <iframe data-src="https://drive.google.com/file/d/1iQ-aVlhXy_PehKr4V_2gbp3W3ZF6WsVn/preview" 
                           frameborder="0" 
-                          allow="autoplay"
-                          allowfullscreen>
+                          allow="autoplay; fullscreen"
+                          allowfullscreen
+                          loading="lazy"
+                          sandbox="allow-same-origin allow-scripts"
+                          class="lazy-iframe">
                   </iframe>
                 </div>
               </div>
               
               <div class="video-item">
                 <div class="video-container">
-                  <iframe src="https://drive.google.com/file/d/1_Cc3P58HXR-gdZVmQtQltVUfpy3hXlyW/preview" 
+                  <iframe data-src="https://drive.google.com/file/d/10Zoq88or_370rHoQww6KEP9wR7My_qY7/preview" 
                           frameborder="0" 
-                          allow="autoplay"
-                          allowfullscreen>
+                          allow="autoplay; fullscreen"
+                          allowfullscreen
+                          loading="lazy"
+                          sandbox="allow-same-origin allow-scripts"
+                          class="lazy-iframe">
                   </iframe>
                 </div>
               </div>
               
               <div class="video-item">
                 <div class="video-container">
-                  <iframe src="https://drive.google.com/file/d/10Zoq88or_370rHoQww6KEP9wR7My_qY7/preview" 
+                  <iframe data-src="https://drive.google.com/file/d/1AC6NOcpmJxn2d6gWct66VPeAh0FwP0w9/preview" 
                           frameborder="0" 
-                          allow="autoplay"
-                          allowfullscreen>
+                          allow="autoplay; fullscreen"
+                          allowfullscreen
+                          loading="lazy"
+                          sandbox="allow-same-origin allow-scripts"
+                          class="lazy-iframe">
                   </iframe>
                 </div>
               </div>
               
-              <div class="video-item">
-                <div class="video-container">
-                  <iframe src="https://drive.google.com/file/d/18JPtK3c2H8bUoiV67rpKI74Iqgc_F0Gr/preview" 
-                          frameborder="0" 
-                          allow="autoplay"
-                          allowfullscreen>
-                  </iframe>
-                </div>
-              </div>
-              
-              <div class="video-item">
-                <div class="video-container">
-                  <iframe src="https://drive.google.com/file/d/1AC6NOcpmJxn2d6gWct66VPeAh0FwP0w9/preview" 
-                          frameborder="0" 
-                          allow="autoplay"
-                          allowfullscreen>
-                  </iframe>
-                </div>
-              </div>
-              
-              <div class="video-item">
-                <div class="video-container">
-                  <iframe src="https://drive.google.com/file/d/1JFSHLFbyQ1_zavf8uGve9bc9ToHXcRtk/preview" 
-                          frameborder="0" 
-                          allow="autoplay"
-                          allowfullscreen>
-                  </iframe>
-                </div>
-              </div>
-              
-              <div class="video-item">
-                <div class="video-container">
-                  <iframe src="https://drive.google.com/file/d/1oiIdHXqjsQNRP8Pt4eKLeTJSi3wdg_2K/preview" 
-                          frameborder="0" 
-                          allow="autoplay"
-                          allowfullscreen>
-                  </iframe>
-                </div>
-              </div>
-              
-              <div class="video-item">
-                <div class="video-container">
-                  <iframe src="https://drive.google.com/file/d/1yE-vHJrXPKLZNyIXAqy13hXvlg7OJ3db/preview" 
-                          frameborder="0" 
-                          allow="autoplay"
-                          allowfullscreen>
-                  </iframe>
-                </div>
-              </div>
             </div>
             
             <button class="video-nav-btn next" type="button" aria-label="Next video" onclick="handleNextClick(event)">
@@ -985,7 +977,7 @@
           <ul class="grid-list">
 
             <li>
-              <a href="coming-soon.html" class="community-card has-before hover:shine">
+              <a href="platform-index.html" class="community-card has-before hover:shine">
 
                 <div class="card-banner img-holder" style="--width: 350; --height: 450;">
                   <img src="./assets/images/event-1.jpg" width="350" height="450" loading="lazy"
@@ -1004,7 +996,7 @@
             </li>
 
             <li>
-              <a href="coming-soon.html" class="community-card has-before hover:shine">
+              <a href="platform-index.html" class="community-card has-before hover:shine">
 
                 <div class="card-banner img-holder" style="--width: 350; --height: 450;">
                   <img src="./assets/images/event-2.jpg" width="350" height="450" loading="lazy"
@@ -1023,7 +1015,7 @@
             </li>
 
             <li>
-              <a href="coming-soon.html" class="community-card has-before hover:shine">
+              <a href="platform-index.html" class="community-card has-before hover:shine">
 
                 <div class="card-banner img-holder" style="--width: 350; --height: 450;">
                   <img src="./assets/images/photo_2025-08-05_18-45-59.jpg" width="350" height="450" loading="lazy"
@@ -1042,7 +1034,7 @@
             </li>
 
             <li>
-              <a href="coming-soon.html" class="community-card has-before hover:shine">
+              <a href="platform-index.html" class="community-card has-before hover:shine">
 
                 <div class="card-banner img-holder" style="--width: 350; --height: 450;">
                   <img src="./assets/images/photo_2025-08-05_18-45-58.jpg" width="350" height="450" loading="lazy"
@@ -1300,6 +1292,91 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    // Enhanced preloader that waits for videos to load
+    document.addEventListener('DOMContentLoaded', function() {
+      const preloader = document.querySelector('[data-preload]');
+      const lazyIframes = document.querySelectorAll('.lazy-iframe');
+      let videosLoaded = 0;
+      let allLoaded = false;
+      
+      console.log(`🍕 Found ${lazyIframes.length} videos to load`);
+      
+      // Function to hide preloader and show page
+      function showPage() {
+        if (allLoaded) return; // Prevent double execution
+        allLoaded = true;
+        
+        console.log('🍕 All videos ready, hiding preloader...');
+        
+        setTimeout(() => {
+          if (preloader) {
+            preloader.classList.add('loaded');
+          }
+          document.body.classList.add('loaded');
+          console.log('🍕 Page is now visible!');
+        }, 800); // Slight delay for smooth transition
+      }
+      
+      // Function called when a video loads
+      function onVideoLoad(index, success = true) {
+        videosLoaded++;
+        const status = success ? '✅' : '⚠️';
+        console.log(`${status} Video ${index + 1}/${lazyIframes.length} loaded (${videosLoaded} total)`);
+        
+        // Show page when all videos are processed (loaded or timed out)
+        if (videosLoaded >= lazyIframes.length) {
+          showPage();
+        }
+      }
+      
+      // Load videos and track their status
+      if (lazyIframes.length > 0) {
+        lazyIframes.forEach((iframe, index) => {
+          const src = iframe.getAttribute('data-src');
+          if (src) {
+            // Set up event handlers before loading
+            iframe.onload = () => onVideoLoad(index, true);
+            iframe.onerror = () => onVideoLoad(index, false);
+            
+            // Load the video
+            iframe.src = src;
+            iframe.removeAttribute('data-src');
+            iframe.classList.remove('lazy-iframe');
+            
+            // Timeout fallback for each video (8 seconds)
+            setTimeout(() => {
+              // Check if this video hasn't been counted yet
+              if (iframe.onload || iframe.onerror) {
+                // Clear the event handlers to prevent double counting
+                iframe.onload = null;
+                iframe.onerror = null;
+                console.warn(`⏰ Video ${index + 1} timed out after 8 seconds`);
+                onVideoLoad(index, false);
+              }
+            }, 8000);
+          } else {
+            // No src, count as loaded
+            onVideoLoad(index, false);
+          }
+        });
+        
+        // Maximum wait time before showing page regardless (15 seconds)
+        setTimeout(() => {
+          if (!allLoaded) {
+            console.warn('⏰ Maximum wait time reached, showing page anyway');
+            showPage();
+          }
+        }, 15000);
+        
+      } else {
+        // No videos found, show page immediately
+        console.log('🍕 No videos found, showing page');
+        showPage();
+      }
+    });
+  </script>
 
 </body>
 

@@ -8,11 +8,21 @@
  * loading will be end after document is loaded
  */
 
-const preloader = document.querySelector("[data-preaload]");
+const preloader = document.querySelector("[data-preload]");
 
+// Only handle preloader if our custom video loader hasn't handled it
 window.addEventListener("load", function () {
-  preloader.classList.add("loaded");
-  document.body.classList.add("loaded");
+  // Check if our custom video loader is managing the preloader
+  const hasCustomPreloader = document.querySelector('.lazy-iframe');
+  
+  // If no video loader is present, handle preloader normally
+  if (!hasCustomPreloader && preloader && !preloader.classList.contains("loaded")) {
+    setTimeout(() => {
+      preloader.classList.add("loaded");
+      document.body.classList.add("loaded");
+      console.log('🍕 Script.js preloader fallback activated');
+    }, 1000);
+  }
 });
 
 
@@ -89,58 +99,61 @@ const heroSliderItems = document.querySelectorAll("[data-hero-slider-item]");
 const heroSliderPrevBtn = document.querySelector("[data-prev-btn]");
 const heroSliderNextBtn = document.querySelector("[data-next-btn]");
 
-let currentSlidePos = 0;
-let lastActiveSliderItem = heroSliderItems[0];
+// Only initialize hero slider if elements exist
+if (heroSlider && heroSliderItems.length > 0 && heroSliderPrevBtn && heroSliderNextBtn) {
+  let currentSlidePos = 0;
+  let lastActiveSliderItem = heroSliderItems[0];
 
-const updateSliderPos = function () {
-  lastActiveSliderItem.classList.remove("active");
-  heroSliderItems[currentSlidePos].classList.add("active");
-  lastActiveSliderItem = heroSliderItems[currentSlidePos];
-}
-
-const slideNext = function () {
-  if (currentSlidePos >= heroSliderItems.length - 1) {
-    currentSlidePos = 0;
-  } else {
-    currentSlidePos++;
+  const updateSliderPos = function () {
+    lastActiveSliderItem.classList.remove("active");
+    heroSliderItems[currentSlidePos].classList.add("active");
+    lastActiveSliderItem = heroSliderItems[currentSlidePos];
   }
 
-  updateSliderPos();
-}
+  const slideNext = function () {
+    if (currentSlidePos >= heroSliderItems.length - 1) {
+      currentSlidePos = 0;
+    } else {
+      currentSlidePos++;
+    }
 
-heroSliderNextBtn.addEventListener("click", slideNext);
-
-const slidePrev = function () {
-  if (currentSlidePos <= 0) {
-    currentSlidePos = heroSliderItems.length - 1;
-  } else {
-    currentSlidePos--;
+    updateSliderPos();
   }
 
-  updateSliderPos();
+  heroSliderNextBtn.addEventListener("click", slideNext);
+
+  const slidePrev = function () {
+    if (currentSlidePos <= 0) {
+      currentSlidePos = heroSliderItems.length - 1;
+    } else {
+      currentSlidePos--;
+    }
+
+    updateSliderPos();
+  }
+
+  heroSliderPrevBtn.addEventListener("click", slidePrev);
+
+  /**
+   * auto slide
+   */
+
+  let autoSlideInterval;
+
+  const autoSlide = function () {
+    autoSlideInterval = setInterval(function () {
+      slideNext();
+    }, 7000);
+  }
+
+  addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseover", function () {
+    clearInterval(autoSlideInterval);
+  });
+
+  addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseout", autoSlide);
+
+  window.addEventListener("load", autoSlide);
 }
-
-heroSliderPrevBtn.addEventListener("click", slidePrev);
-
-/**
- * auto slide
- */
-
-let autoSlideInterval;
-
-const autoSlide = function () {
-  autoSlideInterval = setInterval(function () {
-    slideNext();
-  }, 7000);
-}
-
-addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseover", function () {
-  clearInterval(autoSlideInterval);
-});
-
-addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseout", autoSlide);
-
-window.addEventListener("load", autoSlide);
 
 
 

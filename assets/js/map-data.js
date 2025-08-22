@@ -227,11 +227,21 @@ class PizzaInteractiveMap {
             return;
         }
 
-        // Initialize the map
-        this.map = L.map(this.containerId, {
-            zoomControl: true,
-            scrollWheelZoom: true
-        }).setView([20, 0], 2);
+        if (typeof L === 'undefined') {
+            console.warn('Leaflet library not loaded - map functionality disabled');
+            return;
+        }
+
+        try {
+            // Initialize the map
+            this.map = L.map(this.containerId, {
+                zoomControl: true,
+                scrollWheelZoom: true
+            }).setView([20, 0], 2);
+        } catch (error) {
+            console.error('Failed to initialize map:', error);
+            return;
+        }
 
         // Add tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

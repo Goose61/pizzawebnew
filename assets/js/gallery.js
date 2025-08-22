@@ -1,24 +1,60 @@
 // Enhanced Gallery JavaScript - Based on Anime.js Gallery
 // Crypto and $PIZZA token focused gallery
 
+// jQuery fallback to prevent errors
+if (typeof $ === 'undefined') {
+  console.warn('jQuery not loaded - gallery functionality limited');
+  window.$ = function() { 
+    return { 
+      on: function() { return this; },
+      addClass: function() { return this; },
+      removeClass: function() { return this; },
+      each: function() { return this; },
+      html: function() { return this; },
+      text: function() { return this; },
+      css: function() { return this; },
+      show: function() { return this; },
+      hide: function() { return this; },
+      ready: function(fn) { if (typeof fn === 'function') setTimeout(fn, 100); }
+    };
+  };
+}
+
+// Anime.js fallback
+if (typeof anime === 'undefined') {
+  console.warn('Anime.js not loaded - animations disabled');
+  window.anime = function() { 
+    return { 
+      add: function() { return this; },
+      timeline: function() { return { add: function() { return this; } }; }
+    };
+  };
+}
+
 // Initialize HammerJS for touch gestures - Only on orbital ring
 var orbitElement = document.querySelector('.gallery-container .bottom .orbit');
-if (orbitElement) {
-  var hammertime = new Hammer(orbitElement);
+if (orbitElement && typeof Hammer !== 'undefined') {
+  try {
+    var hammertime = new Hammer(orbitElement);
 
-  var swiped_top = false;
+    var swiped_top = false;
 
-  // Only allow horizontal swipes for navigation and down swipe for closing modal
-  hammertime.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL | Hammer.DIRECTION_DOWN });
-  hammertime.on('swipeleft', function(ev) {
-    cmove("prev");
-  });
-  hammertime.on('swiperight', function(ev) {
-    cmove("next");
-  });
-  hammertime.on('swipedown', function(ev) {
-    closemodal();
-  });
+    // Only allow horizontal swipes for navigation and down swipe for closing modal
+    hammertime.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL | Hammer.DIRECTION_DOWN });
+    hammertime.on('swipeleft', function(ev) {
+      cmove("prev");
+    });
+    hammertime.on('swiperight', function(ev) {
+      cmove("next");
+    });
+    hammertime.on('swipedown', function(ev) {
+      closemodal();
+    });
+  } catch (error) {
+    console.warn('HammerJS not available:', error);
+  }
+} else {
+  console.warn('HammerJS not loaded or orbit element not found');
 }
 
 // Action button clicks
