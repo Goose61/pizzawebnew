@@ -84,6 +84,236 @@
       width: 100%;
       flex: 0 0 auto;
     }
+
+    /* Critical styles for GitHub Pages deployment */
+    /* Pizza Statistics Section */
+    .pizza-stats-section {
+      background: linear-gradient(135deg, #fff8e1 0%, #ffe4b3 50%, #ffdab9 100%) !important;
+      position: relative !important;
+      overflow: hidden !important;
+      padding: 80px 0 !important;
+    }
+
+    .pizza-stats-section .section-subtitle {
+      color: #d2691e !important;
+      font-weight: 700 !important;
+    }
+
+    .pizza-stats-section .section-title {
+      color: #c0392b !important;
+      margin-bottom: 20px !important;
+    }
+
+    .pizza-stats-section .section-text {
+      color: #8B4513 !important;
+      font-size: 1.8rem !important;
+      line-height: 1.6 !important;
+      max-width: 800px !important;
+      margin: 0 auto 40px !important;
+    }
+
+    .stats-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+      gap: 30px !important;
+      margin: 50px 0 !important;
+      max-width: 1200px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.9) !important;
+      border: 3px solid rgba(210, 105, 30, 0.3) !important;
+      border-radius: 20px !important;
+      padding: 35px 25px !important;
+      text-align: center !important;
+      transition: all 0.3s ease !important;
+      position: relative !important;
+      overflow: hidden !important;
+      backdrop-filter: blur(10px) !important;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+      border-color: rgba(210, 105, 30, 0.6) !important;
+    }
+
+    .stat-icon {
+      width: 70px !important;
+      height: 70px !important;
+      background: linear-gradient(135deg, #d2691e, #cd853f) !important;
+      border-radius: 50% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin: 0 auto 20px !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .stat-icon ion-icon {
+      font-size: 3rem !important;
+      color: white !important;
+    }
+
+    .stat-title {
+      color: #8B4513 !important;
+      font-size: 1.6rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 15px !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+    }
+
+    .stat-value {
+      color: #d2691e !important;
+      font-size: 3rem !important;
+      font-weight: 700 !important;
+      margin: 10px 0 !important;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .stat-label {
+      color: #654321 !important;
+      font-size: 1.2rem !important;
+      font-weight: 500 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+    }
+
+    .contract-address {
+      cursor: pointer !important;
+      word-break: break-all !important;
+      font-family: 'Courier New', monospace !important;
+      font-size: 2.2rem !important;
+      padding: 10px !important;
+      border-radius: 8px !important;
+      background: rgba(210, 105, 30, 0.1) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    /* Business Solutions Section */
+    .business-solutions-section {
+      background: #fff8e1 !important;
+      position: relative !important;
+      overflow: hidden !important;
+      padding: 80px 0 !important;
+    }
+
+    .business-solutions-section .section-subtitle {
+      color: #d2691e !important;
+      font-weight: 700 !important;
+    }
+
+    .business-solutions-section .section-title {
+      color: #8B4513 !important;
+      margin-bottom: 20px !important;
+    }
+
+    .business-solutions-section .section-text {
+      color: #654321 !important;
+      font-size: 1.8rem !important;
+      line-height: 1.6 !important;
+      max-width: 900px !important;
+      margin: 0 auto 50px !important;
+    }
+
+    .business-benefits {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+      gap: 40px !important;
+      margin: 60px 0 !important;
+      max-width: 1200px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .benefit-card {
+      background: rgba(255, 255, 255, 0.9) !important;
+      border: 2px solid rgba(210, 105, 30, 0.3) !important;
+      border-radius: 20px !important;
+      padding: 40px 30px !important;
+      text-align: center !important;
+      transition: all 0.3s ease !important;
+      position: relative !important;
+      overflow: hidden !important;
+      min-height: 350px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+      border-color: rgba(210, 105, 30, 0.6) !important;
+    }
+
+    .benefit-icon {
+      width: 80px !important;
+      height: 80px !important;
+      background: linear-gradient(135deg, #d2691e, #cd853f) !important;
+      border-radius: 50% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin: 0 auto 25px !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .benefit-icon ion-icon {
+      font-size: 3.5rem !important;
+      color: white !important;
+    }
+
+    .benefit-title {
+      color: #8B4513 !important;
+      font-size: 1.8rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 15px !important;
+    }
+
+    .benefit-description {
+      color: #654321 !important;
+      font-size: 1.4rem !important;
+      line-height: 1.5 !important;
+      margin-bottom: 20px !important;
+      flex-grow: 1 !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    .benefit-stat {
+      background: rgba(210, 105, 30, 0.2) !important;
+      color: #d2691e !important;
+      font-size: 1.6rem !important;
+      font-weight: 700 !important;
+      padding: 10px 20px !important;
+      border-radius: 25px !important;
+      display: inline-block !important;
+      border: 1px solid rgba(210, 105, 30, 0.3) !important;
+      margin-top: auto !important;
+    }
+
+    /* Mobile responsive adjustments */
+    @media (max-width: 768px) {
+      .pizza-stats-section {
+        padding: 60px 0 !important;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin: 30px 20px !important;
+      }
+
+      .business-benefits {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        margin: 40px 20px !important;
+      }
+    }
   </style>
 
   <!-- 
