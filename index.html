@@ -235,10 +235,15 @@
               <ion-icon name="paper-plane-outline"></ion-icon>
               <span>Join Telegram</span>
             </a>
-            
+
             <a href="https://x.com/Pizza_on__Sol" class="social-btn x-btn">
               <ion-icon name="logo-twitter"></ion-icon>
               <span>Follow on X</span>
+            </a>
+
+            <a href="https://dexscreener.com/solana/7ytnie16mzq7vcaaz52ogubgu3nhff49luypvt5e8jkz" class="social-btn buy-pizza-btn" target="_blank" rel="noopener noreferrer">
+              <ion-icon name="rocket-outline"></ion-icon>
+              <span>Buy $PIZZA</span>
             </a>
           </div>
         </div>
@@ -450,88 +455,126 @@
               <span class="text text-1">Register Now</span>
               <span class="text text-2" aria-hidden="true">Register Now</span>
             </a>
+            <a href="https://dexscreener.com/solana/7ytnie16mzq7vcaaz52ogubgu3nhff49luypvt5e8jkz" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+              <span class="text text-1">Buy $PIZZA</span>
+              <span class="text text-2" aria-hidden="true">Buy $PIZZA</span>
+            </a>
           </div>
 
         </div>
       </section>
 
-      <!-- 
-        - #PIZZA BUILDER SECTION
+      <!--
+        - #PIZZA STATISTICS SECTION
       -->
 
-      <section class="section pizza-builder-section bg-black-10 text-center" aria-label="pizza-builder" id="pizza-builder">
-        
-        <!-- Background Shapes for Desktop -->
-        <div class="shape shape-1 desktop-only">
-          <img src="./assets/images/shape-6.png" alt="Pizza Shape">
-        </div>
-        <div class="shape shape-2 desktop-only">
-          <img src="./assets/images/shape-7.png" alt="Pizza Shape">
-        </div>
+      <section class="section pizza-stats-section bg-black-10 text-center" aria-label="pizza-statistics" id="pizza-builder">
 
         <div class="container">
 
-          <p class="section-subtitle label-2">🍕 $PIZZA TOKEN LAYERS 🍕</p>
+          <p class="section-subtitle label-2">📊 $PIZZA TOKEN STATS 📊</p>
 
-          <h2 class="headline-1 section-title">Building $PIZZA Layer by Layer</h2>
+          <h2 class="headline-1 section-title">$PIZZA Statistics</h2>
 
           <p class="section-text">
-            Discover how our $PIZZA token is structured like a perfect pizza - each layer represents a core component of our mission
+            Real-time statistics and analytics for the $PIZZA token powered by Helius API
           </p>
 
-        </div>
-        
-        <!-- Pizza Builder Animation Container -->
-        <div id="pizza-container">
-          <div id="crust" class="pizza-layer"></div>
-          <div id="sauce" class="pizza-layer"></div>
-          <div id="cheese" class="pizza-layer"></div>
-          <div id="toppings" class="pizza-layer">
-            <!-- Pepperoni positions - Using percentage-based positioning for responsive scaling -->
-            <!-- Top left quadrant -->
-            <div class="pepperoni" style="top: 15%; left: 20%;"></div>
-            <div class="pepperoni" style="top: 30%; left: 25%;"></div>
-            
-            <!-- Top right quadrant -->
-            <div class="pepperoni" style="top: 20%; left: 65%;"></div>
-            <div class="pepperoni" style="top: 35%; left: 70%;"></div>
-            
-            <!-- Bottom left quadrant -->
-            <div class="pepperoni" style="top: 60%; left: 22%;"></div>
-            <div class="pepperoni" style="top: 75%; left: 28%;"></div>
-            
-            <!-- Bottom right quadrant -->
-            <div class="pepperoni" style="top: 65%; left: 68%;"></div>
-            
-            <!-- Center area -->
-            <div class="pepperoni" style="top: 45%; left: 45%;"></div>
-          </div>
-        </div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <ion-icon name="analytics-outline"></ion-icon>
+              </div>
+              <h3 class="stat-title">Market Cap</h3>
+              <p class="stat-value" id="market-cap">Loading...</p>
+              <span class="stat-label">USD</span>
+            </div>
 
-        <!-- Layer Info Elements -->
-        <div id="crust-info" class="layer-info">
-          <h4>🍕 Core Team</h4>
-          <p>The foundation of $PIZZA - our dedicated core team building the future of pizza finance.</p>
-        </div>
-        
-        <div id="sauce-info" class="layer-info">
-          <h4>🎯 Mission & Vision</h4>
-          <p>Our mission to revolutionize the pizza industry through blockchain technology and community-driven innovation.</p>
-        </div>
-        
-        <div id="cheese-info" class="layer-info">
-          <h4>💪 Hard Work & Dedication</h4>
-          <p>The dedication and hard work that goes into every aspect of the $PIZZA ecosystem.</p>
-        </div>
-        
-        <div id="toppings-info" class="layer-info">
-          <h4>🚀 Technology Stack</h4>
-          <p>Agent Crust AI, Pizza Defenders game, PIZZA exchange, and cutting-edge blockchain technology.</p>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <ion-icon name="people-outline"></ion-icon>
+              </div>
+              <h3 class="stat-title">Total Holders</h3>
+              <p class="stat-value" id="holder-count">Loading...</p>
+              <span class="stat-label">Addresses</span>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <ion-icon name="wallet-outline"></ion-icon>
+              </div>
+              <h3 class="stat-title">Total Supply</h3>
+              <p class="stat-value" id="total-supply">1,000,000,000</p>
+              <span class="stat-label">$PIZZA</span>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <ion-icon name="rocket-outline"></ion-icon>
+              </div>
+              <h3 class="stat-title">Contract</h3>
+              <p class="stat-value contract-address" onclick="copyContract()">4AkCN6K...A2pump</p>
+              <span class="stat-label">Click to Copy</span>
+            </div>
+          </div>
+
+
         </div>
 
       </section>
 
-      <!-- 
+      <!--
+        - #BUSINESS SOLUTIONS SECTION
+      -->
+
+      <section class="section business-solutions-section text-center" aria-label="business-solutions" id="business-solutions">
+
+        <div class="container">
+
+          <p class="section-subtitle label-2">🏪 FOR BUSINESS OWNERS 🏪</p>
+
+          <h2 class="headline-1 section-title">Transform Your Business with $PIZZA</h2>
+
+          <p class="section-text">
+            Join the revolution of smart payment solutions. Reduce costs, increase customer loyalty, and unlock new revenue streams with our blockchain-powered platform designed specifically for forward-thinking business owners.
+          </p>
+
+          <div class="business-benefits">
+
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <ion-icon name="trending-down-outline"></ion-icon>
+              </div>
+              <h3 class="benefit-title">Lower Transaction Costs</h3>
+              <p class="benefit-description">Save up to $3,774 annually compared to traditional payment processors like Stripe</p>
+              <div class="benefit-stat">Up to 75% savings</div>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <ion-icon name="people-outline"></ion-icon>
+              </div>
+              <h3 class="benefit-title">Built-In Customer Loyalty</h3>
+              <p class="benefit-description">Automatic rewards system that keeps customers coming back without additional setup costs</p>
+              <div class="benefit-stat">0.3 $PIZZA per transaction</div>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <ion-icon name="cash-outline"></ion-icon>
+              </div>
+              <h3 class="benefit-title">Multiple Revenue Streams</h3>
+              <p class="benefit-description">Earn from transactions, optional staking yields, and customizable gift card programs</p>
+              <div class="benefit-stat">4% APY optional staking</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!--
         - #MISSION SECTION
       -->
 
@@ -977,7 +1020,7 @@
           <ul class="grid-list">
 
             <li>
-              <a href="platform-index.html" class="community-card has-before hover:shine">
+              <a href="coming-soon.html" class="community-card has-before hover:shine">
 
                 <div class="card-banner img-holder" style="--width: 350; --height: 450;">
                   <img src="./assets/images/event-1.jpg" width="350" height="450" loading="lazy"
@@ -996,7 +1039,7 @@
             </li>
 
             <li>
-              <a href="platform-index.html" class="community-card has-before hover:shine">
+              <a href="coming-soon.html" class="community-card has-before hover:shine">
 
                 <div class="card-banner img-holder" style="--width: 350; --height: 450;">
                   <img src="./assets/images/event-2.jpg" width="350" height="450" loading="lazy"
@@ -1034,7 +1077,7 @@
             </li>
 
             <li>
-              <a href="platform-index.html" class="community-card has-before hover:shine">
+              <a href="coming-soon.html" class="community-card has-before hover:shine">
 
                 <div class="card-banner img-holder" style="--width: 350; --height: 450;">
                   <img src="./assets/images/photo_2025-08-05_18-45-58.jpg" width="350" height="450" loading="lazy"
@@ -1167,9 +1210,9 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
-  <script src="./assets/js/pizza-builder.js"></script>
   <script src="./assets/js/gallery.js"></script>
   <script src="./assets/js/map-data.js"></script>
+  <script src="./assets/js/pizza-stats.js"></script>
   
   <!-- Video Navigation Script -->
   <script>

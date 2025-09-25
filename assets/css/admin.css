@@ -823,22 +823,56 @@ input:checked + .toggle-slider:before {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .admin-brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .admin-brand i {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    color: #e67e22;
     animation: spin 3s linear infinite;
+}
+
+#business-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    margin-left: 5px;
 }
 
 .admin-user {
     display: flex;
     align-items: center;
+    gap: 20px;
+}
+
+.wallet-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.wallet-info i {
+    color: #f39c12;
+    font-size: 1.1rem;
+}
+
+#wallet-balance {
+    font-weight: 600;
+    color: white;
+    font-size: 0.95rem;
+}
     gap: 15px;
 }
 
@@ -1296,4 +1330,766 @@ input:checked + .toggle-slider:before {
         transform: translateX(0);
         opacity: 1;
     }
-} 
+}
+
+/* Fix for white text visibility and scrolling */
+.admin-dashboard-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100vh;
+    color: #333;
+    --white: #333 !important; /* Override any white color variables */
+}
+
+.admin-main {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 80px);
+    color: #333;
+}
+
+/* Ensure all text is visible against backgrounds */
+.admin-dashboard-body,
+.admin-dashboard-body * {
+    color: #333 !important;
+}
+
+.admin-dashboard-body .text-white,
+.admin-dashboard-body .text-light {
+    color: #333 !important;
+}
+
+/* Override any white text in cards and sections */
+.stat-card,
+.chart-container,
+.activity-section,
+.vault-card,
+.settlement-card,
+.gift-cards-section,
+.staking-container,
+.settings-card {
+    color: #333 !important;
+}
+
+.stat-card h3,
+.stat-card p,
+.stat-card small,
+.chart-container h3,
+.activity-section h3,
+.vault-card h3,
+.settlement-card h3 {
+    color: #333 !important;
+}
+
+/* QR Generator Styles */
+.qr-generator-section {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #e1e5e9;
+    color: #333 !important;
+}
+
+.qr-generator-section h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qr-generator-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.qr-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.qr-controls .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.qr-controls label {
+    font-weight: 500;
+    color: #34495e;
+    font-size: 0.9rem;
+}
+
+.qr-controls .form-input {
+    padding: 12px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+.qr-controls .form-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.qr-controls .form-input:read-only {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+.qr-controls .text-muted {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: 4px;
+}
+
+.qr-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    background: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.qr-placeholder {
+    color: #adb5bd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.loading-qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #3498db;
+}
+
+.qr-code-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.qr-image-container {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.qr-code-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.qr-details {
+    text-align: center;
+    width: 100%;
+}
+
+.qr-details h4 {
+    color: #2c3e50;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.qr-memo {
+    color: #6c757d;
+    font-style: italic;
+    margin: 0 0 12px 0;
+    font-size: 0.9rem;
+}
+
+.qr-info {
+    margin: 12px 0;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+}
+
+.qr-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.qr-actions .btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.qr-actions .btn-outline-primary {
+    color: #3498db;
+    border-color: #3498db;
+    background: transparent;
+}
+
+.qr-actions .btn-outline-primary:hover {
+    background: #3498db;
+    color: white;
+}
+
+.qr-actions .btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+    background: transparent;
+}
+
+.qr-actions .btn-outline-secondary:hover {
+    background: #6c757d;
+    color: white;
+}
+
+.qr-actions .btn-success {
+    color: white;
+    background: #28a745;
+    border-color: #28a745;
+}
+
+.qr-actions .btn-success:hover {
+    background: #218838;
+    border-color: #1e7e34;
+}
+
+.qr-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #e74c3c;
+    padding: 20px;
+}
+
+.qr-error .btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid #3498db;
+    background: transparent;
+    color: #3498db;
+    cursor: pointer;
+}
+
+.qr-error .btn:hover {
+    background: #3498db;
+    color: white;
+}
+
+/* Fix all dashboard sections and ensure proper scrolling */
+.dashboard-section {
+    padding-bottom: 40px; /* Add padding at bottom for scrolling */
+    color: #333 !important;
+}
+
+/* Fix specific elements that might have white text */
+.business-type,
+.verification-status,
+.stat-change,
+.activity-content p,
+.activity-content small,
+.vault-detail span,
+.breakdown-label,
+.breakdown-value,
+.settlement-details,
+.staking-info,
+.loyalty-settings,
+.notification-settings {
+    color: #333 !important;
+}
+
+/* Fix button text colors */
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.btn-success,
+.btn-danger {
+    color: #fff !important;
+}
+
+.btn-outline {
+    color: #333 !important;
+    border-color: #333;
+}
+
+.btn-outline:hover {
+    color: #fff !important;
+    background-color: #333;
+}
+
+/* Fix table text colors */
+.data-table,
+.data-table th,
+.data-table td {
+    color: #333 !important;
+}
+
+/* Fix form input text colors */
+.form-input,
+.form-select,
+.form-textarea {
+    color: #333 !important;
+    background-color: #fff !important;
+}
+
+/* Fix sidebar and navigation text */
+.admin-sidebar,
+.admin-menu .nav-item,
+.admin-menu .nav-item span,
+.admin-menu .nav-item i,
+.admin-sidebar h4,
+.quick-actions h4,
+.quick-actions .btn {
+    color: #333 !important;
+}
+
+.admin-menu .nav-item.active,
+.admin-menu .nav-item:hover {
+    color: #fff !important;
+    background-color: #333;
+}
+
+.admin-menu .nav-item.active span,
+.admin-menu .nav-item.active i,
+.admin-menu .nav-item:hover span,
+.admin-menu .nav-item:hover i {
+    color: #fff !important;
+}
+
+/* Fix modal text */
+.modal-content,
+.modal-body,
+.modal-header,
+.modal-footer {
+    color: #333 !important;
+}
+
+/* Responsive design for QR generator */
+@media (max-width: 768px) {
+    .qr-generator-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .qr-display {
+        min-height: 250px;
+    }
+    
+    .qr-code-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .qr-actions {
+        flex-direction: column;
+    }
+    
+    .qr-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .admin-main {
+        max-height: none; /* Remove height restriction on mobile */
+        padding: 15px;
+    }
+}
+
+/* Additional scrolling and container fixes */
+.admin-container {
+    display: flex;
+    height: calc(100vh - 80px); /* Account for header */
+    overflow: hidden;
+}
+
+.admin-sidebar {
+    flex-shrink: 0;
+    width: 280px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #f8f9fa;
+    padding: 20px 0;
+    border-right: 1px solid #dee2e6;
+}
+
+.admin-menu {
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.admin-menu .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.quick-actions {
+    padding: 0 20px;
+    border-top: 1px solid #dee2e6;
+    padding-top: 20px;
+}
+
+.quick-actions .btn {
+    width: 100%;
+    margin-bottom: 8px;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.admin-main {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    background: #fff;
+    position: relative;
+}
+
+/* Make sure the body and html allow full scrolling */
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.admin-dashboard-body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-header {
+    flex-shrink: 0;
+    height: 80px;
+    background: #fff;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/* Ensure content doesn't get cut off */
+.dashboard-section.active {
+    display: block;
+    min-height: fit-content;
+    padding-bottom: 60px; /* Extra padding for safe scrolling */
+}
+
+/* Fix any potential z-index issues with scrollbars */
+.admin-main::-webkit-scrollbar {
+    width: 8px;
+}
+
+.admin-main::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.admin-main::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.admin-main::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* Sidebar scrollbar styling */
+.admin-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.admin-sidebar::-webkit-scrollbar-track {
+    background: #f8f9fa;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb {
+    background: #dee2e6;
+    border-radius: 3px;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #adb5bd;
+}
+
+/* Fix for mobile responsiveness */
+@media (max-width: 768px) {
+    .admin-container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .admin-sidebar {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+    
+    .admin-main {
+        height: auto;
+        min-height: calc(100vh - 280px);
+    }
+}
+
+/* Payment QR Generator Styles */
+.payment-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.qr-generator-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border: 1px solid #e5e7eb;
+}
+
+.generator-header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.generator-header h3 {
+    margin: 0 0 0.5rem 0;
+    color: #1f2937;
+    font-size: 1.25rem;
+}
+
+.generator-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* QR Generator uses standard form styling */
+.qr-controls .form-group {
+    margin-bottom: 1rem;
+}
+
+.qr-controls .form-group:last-of-type {
+    margin-bottom: 1.5rem;
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.qr-display {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #d1d5db;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    background: #f9fafb;
+}
+
+.qr-placeholder {
+    text-align: center;
+    color: #6b7280;
+}
+
+.qr-placeholder h4 {
+    margin: 1rem 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.qr-placeholder p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.payment-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.info-card h3 {
+    margin: 0 0 1rem 0;
+    color: #1f2937;
+    font-size: 1.1rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.info-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.info-content h4 {
+    margin: 0 0 0.25rem 0;
+    color: #1f2937;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.info-content p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.supported-wallets {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.supported-wallets h4 {
+    margin: 0 0 1rem 0;
+    color: #1f2937;
+    font-size: 1rem;
+}
+
+.wallet-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.wallet-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: #f8fafc;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #374151;
+}
+
+.wallet-item img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.wallet-placeholder {
+    width: 24px;
+    height: 24px;
+    background: #e5e7eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-size: 0.7rem;
+}
+
+.payment-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.status-indicator.active {
+    background: #10b981;
+}
+
+.status-indicator.inactive {
+    background: #ef4444;
+}
+
+/* Mobile responsiveness for payment section */
+@media (max-width: 768px) {
+    .payment-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wallet-list {
+        grid-template-columns: 1fr;
+    }
+}
+}

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Business Solutions - $PIZZA Platform</title>
+  <meta name="title" content="Business Solutions - $PIZZA Platform">
+  <meta name="description" content="Transform your business with $PIZZA's blockchain-powered payment solutions. Lower costs, increase customer loyalty, and unlock new revenue streams.">
+
+  <link rel="shortcut icon" href="./assets/images/pizza/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/pizza-custom.css">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #fff8e1 0%, #ffe4b3 100%);
+      min-height: 100vh;
+    }
+
+    .business-page-hero {
+      background: linear-gradient(135deg, #d2691e 0%, #cd853f 100%);
+      color: white;
+      padding: 120px 0 80px;
+      text-align: center;
+    }
+
+    .business-page-hero h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .business-page-hero p {
+      font-size: 1.8rem;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      opacity: 0.95;
+    }
+
+    .business-content {
+      padding: 80px 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .content-section {
+      margin-bottom: 80px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 60px 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 2px solid rgba(210, 105, 30, 0.2);
+    }
+
+    .content-section h2 {
+      color: #8B4513;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-align: center;
+      border-bottom: 3px solid #d2691e;
+      padding-bottom: 15px;
+    }
+
+    .content-section h3 {
+      color: #d2691e;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 30px 0 15px 0;
+    }
+
+    .content-section p {
+      color: #654321;
+      font-size: 1.5rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .highlight-box {
+      background: rgba(210, 105, 30, 0.1);
+      border: 2px solid rgba(210, 105, 30, 0.3);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 30px 0;
+      border-left: 5px solid #d2691e;
+    }
+
+    .business-types {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin: 40px 0;
+    }
+
+    .business-type {
+      background: rgba(255, 255, 255, 0.8);
+      border: 3px solid #d2691e;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .business-type h4 {
+      color: #8B4513;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .business-type .type-badge {
+      background: linear-gradient(135deg, #d2691e, #cd853f);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    .feature-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(210, 105, 30, 0.2);
+      position: relative;
+      padding-left: 25px;
+      color: #654321;
+      font-size: 1.3rem;
+    }
+
+    .feature-list li::before {
+      content: '✓';
+      color: #d2691e;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .cost-table {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin: 30px 0;
+    }
+
+    .cost-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .cost-table th {
+      background: #d2691e;
+      color: white;
+      padding: 15px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .cost-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+      color: #654321;
+    }
+
+    .cost-table tr:nth-child(even) {
+      background: rgba(210, 105, 30, 0.05);
+    }
+
+    .cta-final {
+      text-align: center;
+      background: linear-gradient(135deg, #d2691e, #cd853f);
+      color: white;
+      padding: 60px 40px;
+      border-radius: 20px;
+      margin-top: 60px;
+    }
+
+    .cta-final h2 {
+      color: white !important;
+      border: none !important;
+      margin-bottom: 25px;
+    }
+
+    .cta-final .btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid white;
+      color: white;
+      padding: 18px 40px;
+      font-size: 1.6rem;
+      border-radius: 50px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      margin: 0 10px;
+    }
+
+    .cta-final .btn:hover {
+      background: white;
+      color: #d2691e;
+    }
+
+    @media (max-width: 768px) {
+      .business-types {
+        grid-template-columns: 1fr;
+      }
+
+      .content-section {
+        margin: 0 20px 60px;
+        padding: 40px 25px;
+      }
+
+      .business-page-hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Simple Header -->
+  <header class="header" style="background: rgba(255, 248, 225, 0.95); backdrop-filter: blur(10px);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0;">
+      <a href="index.html" class="logo">
+        <img src="./assets/images/pizza/pizzaimages/main_logo.png" width="160" height="50" alt="Pizza Coin - Home">
+      </a>
+      <div>
+        <a href="index.html" style="color: #8B4513; text-decoration: none; margin-right: 30px; font-weight: bold;">← Back to Home</a>
+        <a href="platform-index.html" class="btn btn-secondary" style="background: #d2691e; color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none;">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="business-page-hero">
+      <div class="container">
+        <h1>$PIZZA Business Solutions</h1>
+        <p>Revolutionary payment platform designed for forward-thinking business owners. Reduce costs, increase customer loyalty, and unlock new revenue streams.</p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="business-content container">
+
+      <!-- What is $PIZZA Platform Section -->
+      <section class="content-section">
+        <h2>What is the $PIZZA Platform?</h2>
+        <p>The $PIZZA Platform is a unified Solana-based payment system optimized for exactly 10 business partners. We operate on a shared platform vault model with fixed $15 USDC transactions, distinguishing between NCN (Non-Crypto Native) and CN (Crypto Native) businesses with different fee structures and settlement preferences.</p>
+
+        <div class="highlight-box">
+          <h3>🎯 Core Mission</h3>
+          <p><strong>Fixed $15 USDC transactions</strong> - Every transaction is exactly $15 USDC (no variable amounts), creating predictable revenue streams and simplified accounting for your business.</p>
+        </div>
+
+        <p>Our platform automatically handles currency conversion, fee processing, and customer rewards distribution in real-time, allowing you to focus on what you do best - running your business.</p>
+      </section>
+
+      <!-- How It Works Section -->
+      <section class="content-section">
+        <h2>How It Works</h2>
+
+        <h3>1. Customer Payment Flow</h3>
+        <p><strong>Point of Sale:</strong> Customers pay $15 USDC via Solana Pay QR scan ($0.00025/transfer cost).</p>
+        <p><strong>Atomic Swap:</strong> $PIZZA SPL payments are automatically swapped to USDC via Jupiter (0.75% customer loss), ensuring merchant stability.</p>
+
+        <h3>2. Automatic Fee Processing</h3>
+        <div class="business-types">
+          <div class="business-type">
+            <div class="type-badge">NCN</div>
+            <h4>Non-Crypto Native</h4>
+            <ul class="feature-list">
+              <li>2.75% total fees</li>
+              <li>1.45% fee ($0.2175) to platform</li>
+              <li>1.3% vault ($0.195) to platform vault</li>
+              <li>$14.5875 to your wallet</li>
+              <li>Daily fiat conversion via Ramp</li>
+            </ul>
+          </div>
+          <div class="business-type">
+            <div class="type-badge">CN</div>
+            <h4>Crypto Native</h4>
+            <ul class="feature-list">
+              <li>2.30% total fees</li>
+              <li>1% fee ($0.15) to platform</li>
+              <li>1.3% vault ($0.195) to platform vault</li>
+              <li>$14.655 USDC to your wallet</li>
+              <li>Optional 4% APY staking rewards</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>3. Customer Rewards (Automatic)</h3>
+        <p>Every customer automatically receives 0.3 $PIZZA SPL per transaction ($0.30 perceived value, $0.15 actual cost). This is funded by the platform vault, requiring zero effort from you while building incredible customer loyalty.</p>
+      </section>
+
+      <!-- Revenue & Savings Section -->
+      <section class="content-section">
+        <h2>Revenue & Cost Savings</h2>
+
+        <div class="highlight-box">
+          <h3>💰 Annual Savings Comparison</h3>
+          <p><strong>NCN Businesses:</strong> Save $307.79 annually vs. Stripe's $16,425 fees</p>
+          <p><strong>CN Businesses:</strong> Save $3,773.93 annually vs. traditional processors</p>
+        </div>
+
+        <h3>Transparent Cost Breakdown</h3>
+        <div class="cost-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Business Type</th>
+                <th>Processing Fee</th>
+                <th>Vault Contribution</th>
+                <th>Your Net Revenue</th>
+                <th>Annual Savings</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>NCN (Non-Crypto Native)</td>
+                <td>2.75%</td>
+                <td>1.3% (auto)</td>
+                <td>$14.59/transaction</td>
+                <td>$307.79</td>
+              </tr>
+              <tr>
+                <td>CN (Crypto Native)</td>
+                <td>2.30%</td>
+                <td>1.3% (auto)</td>
+                <td>$14.66/transaction</td>
+                <td>$3,773.93</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Additional Revenue Streams</h3>
+        <ul class="feature-list">
+          <li><strong>Gift Card Programs:</strong> Issue 100 gift cards/month (5 $PIZZA SPL value), 50% go unused creating pure profit</li>
+          <li><strong>CN Staking Yields:</strong> Optional 4% APY on vault contributions ($119.07 annual dividends)</li>
+          <li><strong>Custom Loyalty Programs:</strong> Set your own discount tiers (e.g., 3 $PIZZA tokens = 10% off)</li>
+          <li><strong>Reduced Operational Costs:</strong> No monthly fees, setup fees, or hidden charges</li>
+        </ul>
+      </section>
+
+      <!-- Getting Started Section -->
+      <section class="content-section">
+        <h2>Getting Started</h2>
+
+        <h3>Startup Investment</h3>
+        <p>Total startup cost per business: <strong>$2,650</strong></p>
+
+        <div class="cost-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Cost</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ramp Integration</td>
+                <td>$700</td>
+                <td>KYC & fiat conversion</td>
+              </tr>
+              <tr>
+                <td>MoonPay Backup</td>
+                <td>$200</td>
+                <td>Redundancy & uptime</td>
+              </tr>
+              <tr>
+                <td>Solana Infrastructure</td>
+                <td>$750</td>
+                <td>Blockchain integration</td>
+              </tr>
+              <tr>
+                <td>Legal & Compliance</td>
+                <td>$1,000</td>
+                <td>MSB, AML compliance</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="highlight-box">
+          <h3>⏱️ Return on Investment</h3>
+          <p><strong>NCN Businesses:</strong> Recover costs in ~8.6 years through savings</p>
+          <p><strong>CN Businesses:</strong> Recover costs in ~8.4 months through savings</p>
+        </div>
+
+        <h3>What You Get</h3>
+        <ul class="feature-list">
+          <li>Integrated QR code payment system</li>
+          <li>Automatic customer rewards (0.3 $PIZZA per transaction)</li>
+          <li>Real-time transaction processing</li>
+          <li>Daily settlement (NCN) or instant USDC (CN)</li>
+          <li>Built-in gift card program</li>
+          <li>Admin dashboard with analytics</li>
+          <li>24/7 blockchain-based operations</li>
+          <li>Compliance with MSB, AML, and GENIUS Act</li>
+        </ul>
+      </section>
+
+      <!-- Security & Compliance Section -->
+      <section class="content-section">
+        <h2>Security & Compliance</h2>
+
+        <h3>Regulatory Compliance</h3>
+        <ul class="feature-list">
+          <li><strong>KYC/AML:</strong> Ramp ($0.50/customer) with MoonPay backup</li>
+          <li><strong>MSB Registration:</strong> $5,000 (Money Services Business)</li>
+          <li><strong>AML Compliance:</strong> $5,000 (Anti-Money Laundering)</li>
+          <li><strong>GENIUS Act Compliant:</strong> No reliance on stablecoin issuer yields</li>
+          <li><strong>5-year record keeping</strong> and suspicious activity reporting</li>
+        </ul>
+
+        <h3>Security Features</h3>
+        <ul class="feature-list">
+          <li>JWT authentication with 2FA</li>
+          <li>Session timeouts and audit trails</li>
+          <li>Multi-signature treasury management</li>
+          <li>Optional CertiK smart contract audit</li>
+          <li>Solana's 65,000 TPS scalability</li>
+        </ul>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="cta-final">
+        <h2>Ready to Transform Your Business?</h2>
+        <p style="font-size: 1.6rem; margin-bottom: 30px; opacity: 0.95;">Join the revolution of smart payment solutions. Limited to 10 business partners.</p>
+        <a href="platform-index.html" class="btn">Get Started Now</a>
+        <a href="index.html" class="btn">Learn More</a>
+        <p style="font-size: 1.3rem; margin-top: 25px; opacity: 0.9;">Questions? Contact us at pizzahub@pizzabit.io</p>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer style="background: rgba(139, 69, 19, 0.1); padding: 40px 0; text-align: center; border-top: 1px solid rgba(210, 105, 30, 0.3);">
+    <div class="container">
+      <p style="color: #8B4513; margin: 0;">&copy; 2025 $PIZZA Business Solutions. Revolutionizing Commerce. 🍕</p>
+    </div>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

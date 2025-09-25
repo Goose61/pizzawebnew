@@ -5,7 +5,11 @@
 
 class EmailVerification {
   constructor(options = {}) {
-    this.apiBase = options.apiBase || 'http://localhost:7000/api';
+    // Use dynamic API configuration if available
+    this.apiBase = options.apiBase || window.API_BASE || 'http://localhost:7000';
+    if (!this.apiBase.includes('/api')) {
+      this.apiBase += '/api';
+    }
     this.recaptchaSiteKey = null;
     this.isVerifying = false;
     this.cache = new Map(); // Cache verification results
