@@ -109,22 +109,97 @@ class PizzaMapData {
                 description: "Chicago's premier Domino's location serving the downtown area",
                 contact: "chicago@pizzacommunity.org",
                 established: "2023-06-20"
+            },
+            {
+                id: 8,
+                name: "Cottage Inn Pizza Redford",
+                city: "Detroit",
+                country: "USA",
+                state: "MI",
+                lat: 42.367575,
+                lng: -83.204269,
+                status: "active",
+                meals_served: 70,
+                partners: 1,
+                description: "Cottage Inn Pizza serving the Redford community in Detroit",
+                contact: "pizzahub@pizzabit.io",
+                established: "2026-02-20"
+            },
+            {
+                id: 9,
+                name: "Cottage Inn Pizza Ann Arbor Packard",
+                city: "Ann Arbor",
+                country: "USA",
+                state: "MI",
+                lat: 42.272063,
+                lng: -83.742428,
+                status: "active",
+                meals_served: 70,
+                partners: 2,
+                description: "Cottage Inn Pizza on Packard serving Ann Arbor",
+                contact: "pizzahub@pizzabit.io",
+                established: "2026-02-20"
+            },
+            {
+                id: 10,
+                name: "Cottage Inn Pizza Troy",
+                city: "Detroit",
+                country: "USA",
+                state: "MI",
+                lat: 42.463284,
+                lng: -83.081703,
+                status: "active",
+                meals_served: 85,
+                partners: 1,
+                description: "Cottage Inn Pizza serving Troy and Detroit area",
+                contact: "pizzahub@pizzabit.io",
+                established: "2026-02-20"
+            },
+            {
+                id: 11,
+                name: "Domino's Pizza",
+                city: "Indianapolis",
+                country: "USA",
+                state: "IN",
+                lat: 39.78841,
+                lng: -86.046637,
+                status: "active",
+                meals_served: 100,
+                partners: 1,
+                description: "Domino's Pizza serving Indianapolis",
+                contact: "pizzahub@pizzabit.io",
+                established: "2026-02-20"
+            },
+            {
+                id: 12,
+                name: "Domino's Pizza",
+                city: "Indianapolis",
+                country: "USA",
+                state: "IN",
+                lat: 39.889811,
+                lng: -86.059084,
+                status: "active",
+                meals_served: 150,
+                partners: 3,
+                description: "Domino's Pizza serving Indianapolis",
+                contact: "pizzahub@pizzabit.io",
+                established: "2026-02-20"
             }
         ];
 
         this.defaultDonations = [
             {
                 id: 1,
-                name: "New Mexico Community Kitchen",
-                city: "Albuquerque",
-                country: "USA",
-                state: "NM",
-                lat: 35.0844,
-                lng: -106.6504,
+                name: "Mexico City Food Relief",
+                city: "Mexico City",
+                country: "Mexico",
+                state: "CDMX",
+                lat: 19.4326,
+                lng: -99.1332,
                 status: "active",
                 meals_donated: 250,
-                description: "Supporting local families in New Mexico with pizza donations",
-                contact: "newmexico@pizzacommunity.org",
+                description: "Supporting local families in Mexico City with pizza donations",
+                contact: "mexicocity@pizzacommunity.org",
                 established: "2023-08-15"
             },
             {
@@ -203,21 +278,21 @@ class PizzaMapData {
     }
 
     initializeData() {
-        // Clear any existing cached data to force refresh with new locations
-        localStorage.removeItem(this.storageKey);
-        localStorage.removeItem(this.donationsStorageKey);
-        
+        // Only initialize with defaults if no data exists
         if (!localStorage.getItem(this.storageKey)) {
             this.saveLocations(this.defaultLocations);
-            console.log('Initialized map with new default locations:', this.defaultLocations);
+            console.log('Initialized map with default partner locations:', this.defaultLocations);
         } else {
             // Migrate any locations with old 'in-progress' status to 'progress'
             this.migrateStatusValues();
+            console.log('Using existing partner locations from localStorage');
         }
 
         if (!localStorage.getItem(this.donationsStorageKey)) {
             this.saveDonations(this.defaultDonations);
-            console.log('Initialized map with donation locations:', this.defaultDonations);
+            console.log('Initialized map with default donation locations:', this.defaultDonations);
+        } else {
+            console.log('Using existing donation locations from localStorage');
         }
     }
 
@@ -706,10 +781,7 @@ class PizzaInteractiveMap {
 // Initialize map when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('world-map')) {
-        // Force refresh the map data to ensure new locations are loaded
-        if (window.pizzaMapData) {
-            window.pizzaMapData.forceRefresh();
-        }
+        // Initialize map with existing data (don't force refresh to preserve admin-added locations)
         window.pizzaMap = new PizzaInteractiveMap('world-map');
         
         // Update stats display
@@ -719,13 +791,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const totalPartnersEl = document.getElementById('total-partners');
             const totalMealsEl = document.getElementById('total-meals');
             
-            // Keep the original 12 locations and 18 partners as shown in the UI
-            if (totalLocationsEl) totalLocationsEl.textContent = '12';
-            if (totalPartnersEl) totalPartnersEl.textContent = '18';
+            // Use actual data for locations and partners, fixed value for meals
+            if (totalLocationsEl) totalLocationsEl.textContent = stats.totalLocations;
+            if (totalPartnersEl) totalPartnersEl.textContent = stats.totalPartners;
             if (totalMealsEl) {
-                // Now uses the fixed value from getTotalStats()
+                // Uses the fixed value from getTotalStats()
                 totalMealsEl.textContent = stats.totalMeals.toLocaleString();
             }
         }, 1000);
+
+        // Keep the meals count at 1,500 with a periodic check
+        setInterval(() => {
+            const totalMealsEl = document.getElementById('total-meals');
+            if (totalMealsEl && totalMealsEl.textContent !== '1,500') {
+                totalMealsEl.textContent = '1,500';
+                console.log('🍕 Corrected total meals back to 1,500');
+            }
+        }, 5000);
     }
 }); 
