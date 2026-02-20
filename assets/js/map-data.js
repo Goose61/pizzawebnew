@@ -723,9 +723,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (totalLocationsEl) totalLocationsEl.textContent = '12';
             if (totalPartnersEl) totalPartnersEl.textContent = '18';
             if (totalMealsEl) {
-                // Combine partner meals served + donated meals for total
-                const combinedMeals = stats.totalMeals + stats.totalDonatedMeals;
-                totalMealsEl.textContent = combinedMeals.toLocaleString();
+                // Set total meals to 1500 as requested
+                totalMealsEl.textContent = '1,500';
             }
         }, 1000);
     }
