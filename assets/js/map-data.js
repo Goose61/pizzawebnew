@@ -303,7 +303,7 @@ class PizzaMapData {
             partnerLocations: partnerLocations.length,
             donationLocations: donationLocations.length,
             activeLocations: allLocations.filter(l => l.status === 'active').length,
-            totalMeals: partnerLocations.reduce((sum, l) => sum + (l.meals_served || 0), 0),
+            totalMeals: 1500, // Fixed value as requested
             totalDonatedMeals: donationLocations.reduce((sum, l) => sum + (l.meals_donated || 0), 0),
             totalPartners: partnerLocations.reduce((sum, l) => sum + (l.partners || 0), 0)
         };
@@ -723,8 +723,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (totalLocationsEl) totalLocationsEl.textContent = '12';
             if (totalPartnersEl) totalPartnersEl.textContent = '18';
             if (totalMealsEl) {
-                // Set total meals to 1500 as requested
-                totalMealsEl.textContent = '1,500';
+                // Now uses the fixed value from getTotalStats()
+                totalMealsEl.textContent = stats.totalMeals.toLocaleString();
             }
         }, 1000);
     }
