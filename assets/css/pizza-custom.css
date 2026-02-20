@@ -516,6 +516,179 @@
   border: none;
 }
 
+/* Map Legend Styles */
+.map-legend {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #d2691e;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  min-width: 180px;
+  font-family: inherit;
+}
+
+.legend-header {
+  text-align: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(210, 105, 30, 0.3);
+  padding-bottom: 8px;
+}
+
+.legend-header h4 {
+  color: #d2691e;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.legend-controls {
+  margin-bottom: 15px;
+}
+
+.legend-toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #8B4513;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.legend-toggle:hover {
+  color: #d2691e;
+  transform: translateX(2px);
+}
+
+.legend-toggle input[type="checkbox"] {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #d2691e;
+}
+
+.toggle-icon {
+  font-size: 1.4rem;
+  margin-right: 5px;
+}
+
+.legend-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(210, 105, 30, 0.3);
+  padding-top: 10px;
+}
+
+.nav-btn {
+  background: linear-gradient(135deg, #d2691e, #cd853f);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn:hover {
+  background: linear-gradient(135deg, #cd853f, #b8860b);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(210, 105, 30, 0.3);
+}
+
+.nav-btn:active {
+  transform: scale(0.95);
+}
+
+#location-counter {
+  color: #8B4513;
+  font-size: 1.1rem;
+  font-weight: bold;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Enhanced popup styles for different types */
+.pizza-popup .leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 15px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  border: 2px solid #d2691e;
+}
+
+.map-popup .status-badge {
+  font-size: 0.9rem;
+  padding: 4px 10px;
+}
+
+/* Mobile responsive legend */
+@media (max-width: 768px) {
+  .map-legend {
+    min-width: 160px;
+    padding: 12px;
+  }
+  
+  .legend-header h4 {
+    font-size: 1.2rem;
+  }
+  
+  .legend-toggle {
+    font-size: 1.1rem;
+  }
+  
+  .nav-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+  }
+  
+  #location-counter {
+    font-size: 1rem;
+    min-width: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-legend {
+    min-width: 140px;
+    padding: 10px;
+  }
+  
+  .legend-header h4 {
+    font-size: 1.1rem;
+  }
+  
+  .legend-toggle {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  
+  .toggle-icon {
+    font-size: 1.2rem;
+  }
+  
+  .nav-btn {
+    width: 26px;
+    height: 26px;
+    font-size: 1rem;
+  }
+  
+  #location-counter {
+    font-size: 0.9rem;
+    min-width: 40px;
+  }
+}
+
 .marker-pin {
   width: 30px;
   height: 30px;
