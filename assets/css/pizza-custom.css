@@ -48,14 +48,6 @@ body.home-company-banner {
   }
 }
 
-.footer-company-footnote {
-  margin-bottom: 0.75rem;
-  font-size: 1.2rem;
-  font-weight: var(--weight-bold, 700);
-  color: #000000 !important;
-  letter-spacing: 0.04em;
-}
-
 .site-footer-footnote {
   text-align: center;
   padding: 0.85rem 1rem;
