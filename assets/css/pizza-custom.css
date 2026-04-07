@@ -1,3 +1,91 @@
+/* Company branding — below fixed topbar; main nav offset on index (body.home-company-banner) */
+body.home-company-banner {
+  --company-banner-height: 4.35rem;
+}
+
+.hero-company-banner {
+  position: relative;
+  z-index: 3;
+  margin: 0;
+  padding: 1.15rem 1.25rem;
+  min-height: var(--company-banner-height);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: clamp(1.1rem, 2.2vw, 1.65rem);
+  font-weight: var(--weight-bold, 700);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--gold-crayola, #e4c590);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+  background: linear-gradient(180deg, rgba(15, 15, 15, 0.55) 0%, rgba(15, 15, 15, 0.35) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+
+@media (min-width: 575px) {
+  body.home-company-banner .hero-company-banner {
+    margin-top: 51px;
+  }
+
+  body.home-company-banner .header {
+    top: calc(51px + var(--company-banner-height));
+  }
+
+  body.home-company-banner .header.active {
+    top: 0;
+  }
+}
+
+@media (max-width: 574px) {
+  body.home-company-banner .header {
+    top: var(--company-banner-height);
+  }
+}
+
+.footer-company-footnote {
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: var(--weight-bold, 700);
+  color: #000000 !important;
+  letter-spacing: 0.04em;
+}
+
+.site-footer-footnote {
+  text-align: center;
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+  font-weight: var(--weight-bold, 700);
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.site-footer-footnote--sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+.site-footer-footnote--light {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: #5c4033;
+  border-top: 1px solid rgba(210, 105, 30, 0.3);
+  border-radius: 0;
+}
+
 /* Pizza Hero Icon - No spinning animation */
 .hero-btn img {
   /* Removed spinning animation as requested */
